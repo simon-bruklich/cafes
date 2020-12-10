@@ -1,0 +1,196 @@
+.App {
+  text-align: center;
+  padding-top: 15px;
+  margin: 0 auto;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+/* Location form */
+.dropdown-menu {
+  height: 50vh;
+  overflow-y: auto;
+}
+
+.green {
+  color: green;
+}
+
+.orange {
+  color: orange;
+}
+
+.red {
+  color: red;
+}
+
+.btn {
+  border-radius: 8px;
+  min-height: 50px;
+}
+
+.pulse-btn {
+  /* animation: none; */
+  animation: pulse 2.2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0px #007bff80;
+  }
+  50% {
+    box-shadow: 0 0 0 5px #007bff80;
+  }
+  100% {
+    box-shadow: 0 0 0 0px #007bff80;
+  }
+}
+
+/* Elements on Homepage */
+
+.intro {
+  color: black;
+  font-weight: bold;
+  font-size: x-large;
+  margin-top: 25vh;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.location {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: stretch;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+#locations-dropdown {
+  background-color: white !important;
+  color: black !important;
+  border: 1px solid grey !important;
+}
+
+.padding-horizontal-10 {
+  padding: 0px 10px;
+}
+
+/* Elements on assessment page */
+
+.assessment {
+  margin: auto;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.assessment-advisory {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.advisory-overview {
+  margin: auto;
+  width: 80%;
+  margin-bottom: 8%;
+}
+
+.chart {
+  width: 93%;
+  max-width: 800px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.bg-gray {
+  background-color: #f7f7f7;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.primary-advisory {
+  border-radius: 8px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.cases {
+  margin-bottom: 4vh;
+}
+
+/* Mobile compatability */
+@media screen and (max-width: 600px) {
+  /* .App {
+    width: 80%;
+  } */
+  .location {
+    display: flex;
+    width: 60vw;
+    flex-direction: column;
+    min-height: 160px;
+    border-radius: 8px;
+    justify-content: stretch;
+  }
+  .margin-bottom-15 {
+    margin-bottom: 15px;
+  }
+  .input-county {
+    min-height: 40px;
+  }
+  .assessment {
+    width: 95%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+  }
+  .assessment-advisory {
+    width: 95%;
+  }
+}
+
+/* Mobile height compatability */
+@media screen and (max-height: 1000px) {
+  .App {
+    padding-top: 5px;
+  }
+  .primary-advisory {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+}
+
+/* Screen height compatability */
+@media screen and (max-height: 300px) {
+  .App {
+    padding-top: 5px;
+  }
+}
+
+* {
+  font-family: Helvetica, Arial, sans-serif;
+}
