@@ -2,10 +2,11 @@ import React from "react";
 
 const Introduction = (props) => {
   return (
-    <div>
-      <span>Welcome to </span>
-      <span>Cafés,</span>
-      <p>(Covid-19 Advising For Educational Systems),</p>
+    <div className="welcome">
+      <span className="welcome-text">Welcome to Cafés,</span>
+      <p className="welcome-text one-line">
+        (Covid-19 Advising For Educational Systems)
+      </p>
       {/* TODO: move to ABOUT page */}
       {/* <p>
         a tool for estimating the risk of exposure for Covid-19 at your school

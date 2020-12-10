@@ -1,18 +1,5 @@
 import React from "react";
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
-
-// const Navbar = () => {
-//   return (
-//     <Bar bg="primary" variant="dark">
-//       <Bar.Brand href="/">Cafés</Bar.Brand>
-//       <Nav className="mr-auto">
-//         <Nav.Link href="/">Home</Nav.Link>
-//         <Nav.Link href="/disclaimer">Disclaimer</Nav.Link>
-//         <Nav.Link href="/about">About</Nav.Link>
-//       </Nav>
-//     </Bar>
-//   );
-// };
+import { Navbar, Nav } from "react-bootstrap";
 
 const NavbarReactive = () => {
   return (
@@ -23,7 +10,9 @@ const NavbarReactive = () => {
         <Nav className="mr-auto">
           <Nav.Link href="/disclaimer">Disclaimer</Nav.Link>
           <Nav.Link href="/about">About</Nav.Link>
-          <Nav.Link href="#deets">Github</Nav.Link>
+          <Nav.Link href="https://github.com/simon-bruklich/COVID-19-Schools">
+            Github
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

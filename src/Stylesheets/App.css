@@ -90,6 +90,19 @@
   padding: 0px 10px;
 }
 
+.welcome {
+  margin-top: 20px;
+}
+
+.welcome-text {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.one-line {
+  font-size: min(4.5vw, 20px);
+}
+
 /* Elements on assessment page */
 
 .assessment {
