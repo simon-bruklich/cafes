@@ -11,14 +11,10 @@ import {
 import React from "react";
 import PropTypes from "prop-types";
 
-const LineGraph = (props) => {
-  const data = props.data;
-  const keyName = props.keyName;
-  const lineNames = props.lineNames;
-
+const LineGraph = ({ data, keyName, lineNames, viewRef }) => {
   // Wrapped in ResponsiveContainer to avoid LineChart overlap with Legend
   return (
-    <div className="center chart">
+    <div ref={viewRef} className="center chart">
       <ResponsiveContainer height={250}>
         <LineChart data={data}>
           <CartesianGrid horizontal={false} vertical={false} />

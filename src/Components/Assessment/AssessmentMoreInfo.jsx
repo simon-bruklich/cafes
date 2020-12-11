@@ -9,6 +9,8 @@ import {
 import LineGraph from "../LineGraph";
 
 const AssessmentMoreInfo = (props) => {
+  // Used to scroll into view
+  const viewRef = React.useRef(null);
   const assessment = props.assessment;
   const lastTwoWeeks = props.lastTwoWeeks;
   let lastTwoWeeksShift = props.lastTwoWeeks;
@@ -28,10 +30,11 @@ const AssessmentMoreInfo = (props) => {
   return (
     <Accordion className="chart">
       <Card>
-        <ContextAwareToggle eventKey="0"></ContextAwareToggle>
+        <ContextAwareToggle viewRef={viewRef} eventKey="0" />
         <Accordion.Collapse eventKey="0">
           <Card.Body className="bg-gray">
             <LineGraph
+              viewRef={viewRef}
               data={twoWeeksCases}
               keyName={"date"}
               lineNames={["Active Cases"]}
@@ -52,7 +55,7 @@ const AssessmentMoreInfo = (props) => {
  * TODO: docs
  * @param {*} param0
  */
-function ContextAwareToggle({ children, eventKey, callback }) {
+function ContextAwareToggle({ viewRef, children, eventKey, callback }) {
   const currentEventKey = useContext(AccordionContext);
 
   const decoratedOnClick = useAccordionToggle(
@@ -62,9 +65,20 @@ function ContextAwareToggle({ children, eventKey, callback }) {
 
   const isCurrentEventKey = currentEventKey === eventKey;
 
+  const scrollToBottom = () => {
+    if (viewRef.current && !isCurrentEventKey) {
+      viewRef.current.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <Accordion.Toggle
-      onClick={decoratedOnClick}
+      onClick={(eventKey, func) => {
+        setTimeout(scrollToBottom, 400);
+        return decoratedOnClick(eventKey, func);
+      }}
       as={Card.Header}
       className="cursor-pointer"
     >
