@@ -3,47 +3,6 @@ import DropdownStateUSA from "./DropdownStateUSA";
 import { Button } from "react-bootstrap";
 import DisclaimerModal from "../Modal";
 
-// Security Note: JSX is already sanitized, no need to re-sanitize input
-// function LocationForm({ onCountyChange, stateUSA, onStateChange }) {
-//   const { value: county, bind: bindCounty, reset: resetCounty } = useInput("");
-
-//   const handleSubmit = useCallback(
-//     (event) => {
-//       event.preventDefault();
-//       onCountyChange(county);
-//     },
-//     [onCountyChange, county]
-//   );
-
-//   return (
-//     <form className="location" onSubmit={handleSubmit}>
-//       <input
-//         id="county-name-input"
-//         className="margin-bottom-15 padding-horizontal-10 input-county"
-//         type="text"
-//         placeholder="County name..."
-//         {...bindCounty}
-//       />
-//       <DropdownStateUSA
-//         stateUSA={stateUSA}
-//         onStateChange={onStateChange}
-//       ></DropdownStateUSA>
-//       <Button
-//         variant="primary"
-//         type="submit"
-//         className={
-//           stateUSA && county
-//             ? "pulse-btn padding-horizontal-10"
-//             : "padding-horizontal-10"
-//         }
-//         disabled={!(stateUSA && county)}
-//       >
-//         Submit
-//       </Button>
-//     </form>
-//   );
-// }
-
 const useInput = (initialValue) => {
   const [value, setValue] = useState(initialValue);
 

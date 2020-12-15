@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import logo from "./logo.svg";
 import aggregate from "./aggregate";
-import Assessment from "./Components/Assessment/Assessment";
-import Cases from "./Components/Cases";
 import LocationForm from "./Components/LocationForm/LocationForm";
+import Cases from "./Components/Cases";
+import Assessment from "./Components/Assessment/Assessment";
+import LocationModal from "./Components/Modal";
 import Navbar from "./Components/Navbar";
 import Introduction from "./Components/Introduction";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -16,22 +17,41 @@ function App() {
   const [county, setCounty] = useState(null);
   const [stateUSA, setStateUSA] = useState(null);
   const [data, setData] = useState([]);
+  const [modalShow, setModalShow] = useState(false);
 
   useEffect(() => {
     async function doWork() {
-      let response = await aggregate(county, stateUSA);
-      setData(response);
+      // let response = await aggregate(county, stateUSA);
+      aggregate(county, stateUSA)
+        .catch((err) => {
+          console.error(err);
+          setModalShow(true);
+        })
+        .then((response) => setData(response));
     }
 
     if (county) {
       doWork();
     }
-  }, [county]);
+  }, [county, stateUSA]);
 
   const results = () => {
     if (county && stateUSA) {
       return (
         <div className="App">
+          <LocationModal
+            show={modalShow}
+            onAccept={() =>
+              modalResolve(setModalShow, setCounty, setStateUSA, setData)
+            }
+            onCancel={() =>
+              modalResolve(setModalShow, setCounty, setStateUSA, setData)
+            }
+            title={"Oops! Location not found"}
+            body={
+              'We were unable to find any data for this location.\nPlease make sure you have entered the correct location and try again\n(e.g. type "Suffolk" for Suffolk County).'
+            }
+          ></LocationModal>
           <Cases aggregation={data} location={[county, stateUSA]}></Cases>
           <Assessment
             aggregation={data}
@@ -78,6 +98,13 @@ function App() {
       </Switch>
     </Router>
   );
+}
+
+function modalResolve(setModalShow, setCounty, setStateUSA, setData) {
+  setCounty(false);
+  setStateUSA(false);
+  setData(false);
+  setModalShow(false);
 }
 
 export default App;

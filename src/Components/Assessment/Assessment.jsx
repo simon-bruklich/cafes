@@ -103,19 +103,11 @@ const computeAverage = (dataSet, fips, population) => {
 
     const deathsAndRecoveries =
       estimateRecoveries(deltaDeathsToday) + deltaDeathsToday;
-    // New cases is change in total cases + (deaths + recoveries).
-    console.log(
-      "deaths",
-      estimateRecoveries(deltaDeathsToday),
-      deltaDeathsToday
-    );
-    //newCasesByDay.push(deltaCasesToday + deathsAndRecoveries);
+
     newCasesByDay.push(Math.max(deltaCasesToday, 0));
   }
 
   const totalNewCases = newCasesByDay.reduce((a, b) => a + b, 0);
-
-  console.log("cases ", totalNewCases, newCasesByDay);
 
   // Calculate CDC statistic: (x / 100,000) = (new cases in last 14 days / County population);
   return (totalNewCases * 100000) / population;

@@ -19,7 +19,7 @@ const CustomModal = (props) => {
       <Modal.Header closeButton>
         <Modal.Title>{title}</Modal.Title>
       </Modal.Header>
-      <Modal.Body>{body}</Modal.Body>
+      <Modal.Body>{<p>{body}</p>}</Modal.Body>
       <Modal.Footer>
         <Button variant="primary" onClick={acceptFn}>
           I Understand

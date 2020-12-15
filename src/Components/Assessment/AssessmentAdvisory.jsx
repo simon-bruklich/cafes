@@ -93,7 +93,7 @@ const AssessmentAdvisory = (props) => {
 };
 
 AssessmentAdvisory.propTypes = {
-  assessment: PropTypes.string,
+  assessment: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 export default AssessmentAdvisory;

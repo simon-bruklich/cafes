@@ -90,7 +90,7 @@ function ContextAwareToggle({ viewRef, children, eventKey, callback }) {
 }
 
 AssessmentMoreInfo.propTypes = {
-  assessment: PropTypes.string,
+  assessment: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   lastTwoWeeks: PropTypes.array,
 };
 
