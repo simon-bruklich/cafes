@@ -7,8 +7,8 @@ function Footer() {
       <Container fluid>
         <Row className="justify-content-center">
           <p className="footer-text">
-            &copy; {new Date().getFullYear()} Simon Bruklich | All rights
-            reserved
+            &copy; {new Date().getFullYear()} Simon Bruklich | All Rights
+            Reserved
           </p>
         </Row>
       </Container>

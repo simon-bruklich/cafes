@@ -11,6 +11,7 @@ import Footer from "./Components/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Stylesheets/App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Disclaimer from "./Components/Disclaimer";
 
 // TODO: lint all files
 
@@ -79,31 +80,26 @@ function App() {
 
   // TODO: disclaimer and About pages
   return (
-    <div className="page-container">
-      <div className="content">
-        <Router>
-          <Route path="/">
-            <Navbar />
+    <div>
+      <Router>
+        <Route path="/">
+          <Navbar />
+        </Route>
+        <Switch>
+          <Route exact path="/">
+            {results()}
           </Route>
-          <Switch>
-            <Route exact path="/">
-              {results()}
-            </Route>
-            <Route exact path="/disclaimer">
-              {/* <Disclaimer></Disclaimer> */}
-            </Route>
-            <Route exact path="/about">
-              {/* <About></About> */}
-            </Route>
-            {/* <Route exact path="/Assessment">
-
-        </Route> */}
-          </Switch>
-          <Route path="/">
-            <Footer />
+          <Route exact path="/disclaimer">
+            <Disclaimer />
           </Route>
-        </Router>
-      </div>
+          <Route exact path="/about">
+            {/* <About></About> */}
+          </Route>
+        </Switch>
+        <Route path="/">
+          <Footer />
+        </Route>
+      </Router>
     </div>
   );
 }

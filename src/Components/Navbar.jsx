@@ -10,7 +10,10 @@ const NavbarReactive = () => {
         <Nav className="mr-auto">
           <Nav.Link href="/disclaimer">Disclaimer</Nav.Link>
           <Nav.Link href="/about">About</Nav.Link>
-          <Nav.Link href="https://github.com/simon-bruklich/COVID-19-Schools">
+          <Nav.Link
+            target="_blank"
+            href="https://github.com/simon-bruklich/COVID-19-Schools"
+          >
             Github
           </Nav.Link>
         </Nav>
