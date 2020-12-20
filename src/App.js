@@ -80,7 +80,7 @@ function App() {
 
   // TODO: disclaimer and About pages
   return (
-    <div>
+    <div className="main-div">
       <Router>
         <Route path="/">
           <Navbar />
