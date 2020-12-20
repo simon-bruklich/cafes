@@ -1,7 +1,19 @@
 import React from "react";
+import { Container, Row } from "react-bootstrap";
 
-const Footer = (props) => {
-  return <div>Footer here</div>;
-};
+function Footer() {
+  return (
+    <div className="main-footer">
+      <Container fluid>
+        <Row className="justify-content-center">
+          <p className="footer-text">
+            &copy; {new Date().getFullYear()} Simon Bruklich | All rights
+            reserved
+          </p>
+        </Row>
+      </Container>
+    </div>
+  );
+}
 
 export default Footer;

@@ -7,6 +7,7 @@ import Assessment from "./Components/Assessment/Assessment";
 import LocationModal from "./Components/Modal";
 import Navbar from "./Components/Navbar";
 import Introduction from "./Components/Introduction";
+import Footer from "./Components/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Stylesheets/App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -78,25 +79,32 @@ function App() {
 
   // TODO: disclaimer and About pages
   return (
-    <Router>
-      <Route path="/">
-        <Navbar></Navbar>
-      </Route>
-      <Switch>
-        <Route exact path="/">
-          {results()}
-        </Route>
-        <Route exact path="/disclaimer">
-          {/* <Disclaimer></Disclaimer> */}
-        </Route>
-        <Route exact path="/about">
-          {/* <About></About> */}
-        </Route>
-        {/* <Route exact path="/Assessment">
+    <div className="page-container">
+      <div className="content">
+        <Router>
+          <Route path="/">
+            <Navbar />
+          </Route>
+          <Switch>
+            <Route exact path="/">
+              {results()}
+            </Route>
+            <Route exact path="/disclaimer">
+              {/* <Disclaimer></Disclaimer> */}
+            </Route>
+            <Route exact path="/about">
+              {/* <About></About> */}
+            </Route>
+            {/* <Route exact path="/Assessment">
 
         </Route> */}
-      </Switch>
-    </Router>
+          </Switch>
+          <Route path="/">
+            <Footer />
+          </Route>
+        </Router>
+      </div>
+    </div>
   );
 }
 
