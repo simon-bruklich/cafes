@@ -175,36 +175,49 @@
   margin-bottom: 4vh;
 }
 
-/* Disclaimer Page */
-.disclaimer-wrap {
-  /* padding-top: 5vh; */
-}
-
-.disclaimer {
+/* Disclaimer and About Page */
+.about-disclaimer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 10vh;
-  width: 60%;
+  padding-top: 30px;
+  width: 45%;
   margin: auto;
+  min-height: 80vh;
   text-rendering: optimizeLegibility;
 }
 
-.disclaimer-header {
-  padding-bottom: 15px;
+.about-disclaimer-header {
+  padding-bottom: 10px;
 }
 
+/* Disclaimer specific */
 .disclaimer-text {
   line-height: 2.2;
   text-align: center;
 }
 
+/* About specific */
+.about-text {
+  line-height: 2;
+  text-align: left;
+  padding-bottom: 10px;
+}
+.about-sub-header {
+  padding-top: 25px;
+  text-align: center;
+}
+
+/* Mobile compatability */
+@media screen and (max-width: 1400px) {
+  .about-disclaimer {
+    width: 60%;
+  }
+}
+
 /* Mobile compatability */
 @media screen and (max-width: 600px) {
-  /* .App {
-    width: 80%;
-  } */
   .location {
     display: flex;
     width: 60vw;
@@ -228,7 +241,7 @@
   .assessment-advisory {
     width: 95%;
   }
-  .disclaimer {
+  .about-disclaimer {
     width: 80%;
   }
 }

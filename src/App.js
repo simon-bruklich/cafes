@@ -11,7 +11,8 @@ import Footer from "./Components/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Stylesheets/App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Disclaimer from "./Components/Disclaimer";
+import Disclaimer from "./Components/Disclaimer/Disclaimer";
+import About from "./Components/About/About";
 
 // TODO: lint all files
 
@@ -93,7 +94,7 @@ function App() {
             <Disclaimer />
           </Route>
           <Route exact path="/about">
-            {/* <About></About> */}
+            <About />
           </Route>
         </Switch>
         <Route path="/">

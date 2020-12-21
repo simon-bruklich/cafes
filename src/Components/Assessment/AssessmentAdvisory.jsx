@@ -18,11 +18,11 @@ const AssessmentAdvisory = (props) => {
 
   const getColor = (assessment) => {
     const assessmentNum = Number(assessment);
-    if (assessmentNum < 4) {
+    if (assessmentNum < 20) {
       return "green";
-    } else if (assessmentNum >= 4 && assessmentNum <= 8) {
+    } else if (assessmentNum >= 20 && assessmentNum <= 200) {
       return "orange";
-    } else if (assessmentNum > 8) {
+    } else if (assessmentNum > 200) {
       return "red";
     } else {
       return "black";
@@ -39,9 +39,9 @@ const AssessmentAdvisory = (props) => {
 
     let assignedRisk;
 
-    if (assessmentNum < 4) {
+    if (assessmentNum < 20) {
       assignedRisk = risk.minimal;
-    } else if (assessmentNum >= 4 && assessmentNum <= 8) {
+    } else if (assessmentNum >= 20 && assessmentNum <= 200) {
       assignedRisk = risk.moderate;
     } else {
       assignedRisk = risk.significant;
@@ -77,13 +77,13 @@ const AssessmentAdvisory = (props) => {
           </span>
         </div>
         <div style={{ flex: 1 }}>
-          <span className="green">Minimal Risk</span>: Less than 4 new cases on
+          <span className="green">Minimal Risk</span>: Less than 20 new cases on
           average in the last 14 days per 100,000 people in this county
           <hr />
-          <span className="orange">Moderate Risk</span>: 4-8 new cases on
-          average in the last 14 days per 100,000 people in this county
+          <span className="orange">Moderate Risk</span>: More than 20 new cases
+          on average in the last 14 days per 100,000 people in this county
           <hr />
-          <span className="red">Significant Risk</span>: More than 8 new cases
+          <span className="red">Significant Risk</span>: More than 200 new cases
           on average in the last 14 days per 100,000 people in this county
           <br />
         </div>

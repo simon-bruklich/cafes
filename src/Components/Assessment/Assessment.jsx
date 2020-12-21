@@ -129,7 +129,6 @@ function estimateRecoveries(deltaDeathsToday) {
 
 // String input
 async function getPopulation(fips) {
-  //https://api.census.gov/data/2019/pep/charagegroups?get=NAME,POP&for=county:009&in=state:25
   let url = "https://api.census.gov/data/2019/pep/charagegroups?get=POP&";
   // First 2 digits are state ID
   const stateID = fips.substring(0, 2);

@@ -11,6 +11,7 @@ const NavbarReactive = () => {
           <Nav.Link href="/disclaimer">Disclaimer</Nav.Link>
           <Nav.Link href="/about">About</Nav.Link>
           <Nav.Link
+            rel="noopener noreferrer"
             target="_blank"
             href="https://github.com/simon-bruklich/COVID-19-Schools"
           >
