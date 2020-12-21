@@ -9,10 +9,6 @@
   pointer-events: none;
 }
 
-.min-height-vh {
-  min-height: 100vh;
-}
-
 /* Footer */
 .main-footer {
   color: white;
@@ -81,7 +77,6 @@
 }
 
 /* Elements on Homepage */
-
 .intro {
   color: black;
   font-weight: bold;
@@ -129,7 +124,6 @@
 }
 
 /* Elements on assessment page */
-
 .assessment {
   margin: auto;
   display: flex;
@@ -182,19 +176,23 @@
 }
 
 /* Disclaimer Page */
+.disclaimer-wrap {
+  /* padding-top: 5vh; */
+}
+
 .disclaimer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 25px;
+  padding-top: 10vh;
   width: 60%;
   margin: auto;
   text-rendering: optimizeLegibility;
 }
 
 .disclaimer-header {
-  padding-bottom: 3%;
+  padding-bottom: 15px;
 }
 
 .disclaimer-text {
@@ -243,6 +241,13 @@
   .primary-advisory {
     margin-top: 25px;
     margin-bottom: 25px;
+  }
+}
+
+/* Screen height compatability */
+@media screen and (max-height: 800px) {
+  .disclaimer {
+    padding-top: 5vh;
   }
 }
 
