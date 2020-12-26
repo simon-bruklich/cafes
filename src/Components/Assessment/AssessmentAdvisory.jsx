@@ -77,14 +77,17 @@ const AssessmentAdvisory = (props) => {
           </span>
         </div>
         <div className="assessment-guide" style={{ flex: 1 }}>
-          <span className="green">Minimal Risk</span>: Less than 20 new cases on
-          average in the last 14 days per 100,000 people in this county
+          <span className="green font-bold">Minimal Risk</span>: Less than 20
+          new cases on average in the last 14 days per 100,000 people in this
+          county
           <hr />
-          <span className="orange">Moderate Risk</span>: More than 20 new cases
-          on average in the last 14 days per 100,000 people in this county
+          <span className="orange font-bold">Moderate Risk</span>: More than 20
+          new cases on average in the last 14 days per 100,000 people in this
+          county
           <hr />
-          <span className="red">Significant Risk</span>: More than 200 new cases
-          on average in the last 14 days per 100,000 people in this county
+          <span className="red font-bold">Significant Risk</span>: More than 200
+          new cases on average in the last 14 days per 100,000 people in this
+          county
           <br />
         </div>
       </div>

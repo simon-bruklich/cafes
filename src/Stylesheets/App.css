@@ -197,6 +197,10 @@
   font-weight: 600;
 }
 
+.font-bold {
+  font-weight: bold;
+}
+
 .cases {
   margin-bottom: 4vh;
 }
@@ -308,5 +312,5 @@
 }
 
 * {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
