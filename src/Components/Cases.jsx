@@ -13,7 +13,7 @@ const Cases = (props) => {
     msg = `${cases} active cases in ${county}, ${state}`;
   } else {
     // TODO:
-    msg = "Loading...";
+    msg = "";
   }
 
   return <h1 className="cases">{msg}</h1>;

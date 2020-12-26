@@ -12,20 +12,17 @@ const AssessmentMoreInfo = (props) => {
   // Used to scroll into view
   const viewRef = React.useRef(null);
   const assessment = props.assessment;
-  const lastTwoWeeks = props.lastTwoWeeks;
-  let lastTwoWeeksShift = props.lastTwoWeeks;
+  const lastTwoWeeks = props.lastTwoWeeks.slice();
+  let lastTwoWeeksShift = props.lastTwoWeeks.slice();
   lastTwoWeeksShift.shift();
-
-  // Ignore first day in array (first item is used as baseline for new cases)
-  const twoWeeksCases = lastTwoWeeksShift.map((day) => ({
-    date: day.date,
-    "Active Cases": day.cases,
-  }));
 
   const twoWeeksDeaths = lastTwoWeeksShift.map((day) => ({
     date: day.date,
     "Cumulative Deaths": day.deaths,
   }));
+
+  const twoWeeksNewCases = calcNewDailyStat(lastTwoWeeks, "Cases");
+  const twoWeeksNewDeaths = calcNewDailyStat(lastTwoWeeks, "Deaths");
 
   return (
     <Accordion className="chart">
@@ -34,15 +31,26 @@ const AssessmentMoreInfo = (props) => {
         <Accordion.Collapse eventKey="0">
           <Card.Body className="bg-gray">
             <LineGraph
+              title={"New Cases"}
               viewRef={viewRef}
-              data={twoWeeksCases}
+              data={twoWeeksNewCases}
               keyName={"date"}
-              lineNames={["Active Cases"]}
+              lineNames={["New Cases"]}
+              paddingTop="padding-top-15"
             ></LineGraph>
             <LineGraph
+              title={"New Deaths"}
+              data={twoWeeksNewDeaths}
+              keyName={"date"}
+              lineNames={["New Deaths"]}
+              paddingTop="padding-top-15"
+            ></LineGraph>
+            <LineGraph
+              title={"Cumulative Deaths"}
               data={twoWeeksDeaths}
               keyName={"date"}
               lineNames={["Cumulative Deaths"]}
+              paddingTop="padding-top-15"
             ></LineGraph>
           </Card.Body>
         </Accordion.Collapse>
@@ -52,8 +60,10 @@ const AssessmentMoreInfo = (props) => {
 };
 
 /**
- * TODO: docs
- * @param {*} param0
+ * Provides self-aware Accordion component that knows its
+ * open/close state and can automatically scroll user's view accordingly.
+ * @param {*} object Object containing metadata and hooks for the HTML Accordion component.
+ * @return {*} JSX containing self-aware Accordion component.
  */
 function ContextAwareToggle({ viewRef, children, eventKey, callback }) {
   const currentEventKey = useContext(AccordionContext);
@@ -65,9 +75,14 @@ function ContextAwareToggle({ viewRef, children, eventKey, callback }) {
 
   const isCurrentEventKey = currentEventKey === eventKey;
 
-  const scrollToBottom = () => {
+  /**
+   * Scrolls the user's view to smoothly center on the Accordion component when opened.
+   */
+  const scrollToAccordion = () => {
     if (viewRef.current && !isCurrentEventKey) {
       viewRef.current.scrollIntoView({
+        block: "nearest",
+        inline: "nearest",
         behavior: "smooth",
       });
     }
@@ -76,7 +91,7 @@ function ContextAwareToggle({ viewRef, children, eventKey, callback }) {
   return (
     <Accordion.Toggle
       onClick={(eventKey, func) => {
-        setTimeout(scrollToBottom, 400);
+        setTimeout(scrollToAccordion, 400);
         return decoratedOnClick(eventKey, func);
       }}
       as={Card.Header}
@@ -88,6 +103,32 @@ function ContextAwareToggle({ viewRef, children, eventKey, callback }) {
     </Accordion.Toggle>
   );
 }
+
+/**
+ * Calculates daily new statistic for each respective day that was given in the array.
+ * @param {*} lastTwoWeeks Array of objects with metrics representing impact of virus on each respective day.
+ * @param {*} name Name of daily new statistic to evaluate.
+ * @return [{*}] Array of objects representing new cases for each respective day.
+ */
+const calcNewDailyStat = (lastTwoWeeks, name) => {
+  let dailyChange = [];
+  const firstDayBootstrap = lastTwoWeeks.shift();
+
+  for (let i = 0; i < lastTwoWeeks.length; i++) {
+    const day = lastTwoWeeks[i];
+    const yesterday = i > 0 ? lastTwoWeeks[i - 1] : firstDayBootstrap;
+
+    dailyChange.push({
+      date: day.date,
+      [`New ${name}`]: Math.max(
+        day[name.toLowerCase()] - yesterday[name.toLowerCase()],
+        0
+      ),
+    });
+  }
+
+  return dailyChange;
+};
 
 AssessmentMoreInfo.propTypes = {
   assessment: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),

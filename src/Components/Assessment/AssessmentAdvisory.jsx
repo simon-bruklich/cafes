@@ -76,7 +76,7 @@ const AssessmentAdvisory = (props) => {
             </p>
           </span>
         </div>
-        <div style={{ flex: 1 }}>
+        <div className="assessment-guide" style={{ flex: 1 }}>
           <span className="green">Minimal Risk</span>: Less than 20 new cases on
           average in the last 14 days per 100,000 people in this county
           <hr />

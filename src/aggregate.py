@@ -4,6 +4,8 @@ import csv
 import sys
 import argparse
 
+# Possible usage in future backend
+
 parser = argparse.ArgumentParser(
     description='Lookup Covid-19 statistics from CSV file')
 parser.add_argument('County', type=str, help='Desired County to search')

@@ -5,7 +5,6 @@ export default aggregate;
 const URL =
   "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv";
 
-// TODO: optimization: work backwards and take only last 2 weeks of data
 // TODO: optimization: stream in data
 async function parseData(data, county, state) {
   let relevant = [];

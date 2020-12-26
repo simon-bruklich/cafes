@@ -8,13 +8,14 @@ import LineGraph from "../LineGraph";
 const CENSUS_API_KEY = "4ea13d96102d350d26d2f58793cb843a11f667b2";
 
 // TODO: handle when invalid county/state is given
+// TODO: refactor component, elevate new cases
 
 // TODO: consider total cases in addition to 2 week avg
 
 const Assessment = (props) => {
   const [population, setPopulation] = useState(null);
   // TODO: why did it stop showing this second loading?
-  const [assessment, setAssessment] = useState("Loading...");
+  const [assessment, setAssessment] = useState(null);
   const [lastTwoWeeks, setLastTwoWeeks] = useState(null);
 
   // Calculate population
@@ -44,10 +45,12 @@ const Assessment = (props) => {
   }, [lastTwoWeeks]);
 
   const data = props.aggregation;
-  // Find last two weeks + 1 day
+
+  // Gather last two weeks + 1 day
   if (population && !lastTwoWeeks) {
     const workingSet = [];
-    for (let i = data.length - 1; i > data.length - 14; i--) {
+    const lastIndex = data.length - 1;
+    for (let i = lastIndex; i > data.length - 16; i--) {
       workingSet.unshift(data[i]);
     }
     console.log("workingSet ", workingSet);
@@ -56,12 +59,14 @@ const Assessment = (props) => {
 
   let graphData;
 
-  // Compute graph
+  // Compute main graph, remove leading bootstrap day
   if (lastTwoWeeks) {
     graphData = lastTwoWeeks.map((day) => ({
       date: day.date,
       "Active Cases": day.cases,
     }));
+    // Skip first bootstrap day
+    graphData.shift();
   }
 
   return (

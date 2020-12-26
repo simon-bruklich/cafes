@@ -123,6 +123,28 @@
   font-size: min(4.5vw, 20px);
 }
 
+/* Elements on loading page */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65vh;
+}
+
+.loading-secondary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 85vw;
+  text-align: center;
+}
+
+.loading-text {
+  font-size: 2em;
+  margin-bottom: 40px;
+}
+
 /* Elements on assessment page */
 .assessment {
   margin: auto;
@@ -167,12 +189,20 @@
   margin-bottom: 40px;
 }
 
+.assessment-guide {
+  padding-top: 15px;
+}
+
 .bold {
   font-weight: 600;
 }
 
 .cases {
   margin-bottom: 4vh;
+}
+
+.padding-top-15 {
+  padding-top: 15px;
 }
 
 /* Disclaimer and About Page */
@@ -195,6 +225,12 @@
 /* Disclaimer specific */
 .disclaimer-text {
   line-height: 2.2;
+  text-align: center;
+}
+
+.disclaimer-modal {
+  display: block;
+  line-height: 2;
   text-align: center;
 }
 

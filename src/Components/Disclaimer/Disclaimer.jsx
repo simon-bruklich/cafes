@@ -5,7 +5,7 @@ import MedicalHealthDisclaimer from "./Medical";
 const Disclaimer = () => {
   return (
     <div className="about-disclaimer">
-      <h1 className="about-disclaimer-header">Disclaimer</h1>
+      <h1 className="about-disclaimer-header">Cafés Disclaimer</h1>
       <div className="disclaimer-text">
         <p>{GeneralDisclaimer}</p>
         <p>{MedicalHealthDisclaimer}</p>

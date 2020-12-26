@@ -44,8 +44,9 @@ const AboutText = (props) => {
       }
       .{<h3 className={aboutSubHeader}>Accuracy</h3>}
       It is important to remember that Cafés provides a best-effort estimate
-      that is updated daily using currently available data. For more
-      information, please read our{" "}
+      that is updated daily using currently available data. Although there are
+      many factors that the CDC uses, Cafés only analyzes based on the first
+      variable: new Covid-19 cases. For more information, please read our{" "}
       {
         <a target="_blank" rel="noopener noreferrer" href="/disclaimer">
           Disclaimer
