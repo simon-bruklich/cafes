@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+const altYellow = "#f7c836";
+
 /**
  * Provides user with a recommendation based on CDC guidelines:
  * Lowest Risk: <5
@@ -18,9 +20,13 @@ const AssessmentAdvisory = (props) => {
 
   const getColor = (assessment) => {
     const assessmentNum = Number(assessment);
-    if (assessmentNum < 20) {
+    if (assessmentNum < 5) {
       return "green";
-    } else if (assessmentNum >= 20 && assessmentNum <= 200) {
+    } else if (assessmentNum >= 5 && assessmentNum < 20) {
+      return "yellowGreen";
+    } else if (assessmentNum >= 20 && assessmentNum < 50) {
+      return altYellow;
+    } else if (assessmentNum >= 50 && assessmentNum <= 200) {
       return "orange";
     } else if (assessmentNum > 200) {
       return "red";
@@ -32,19 +38,25 @@ const AssessmentAdvisory = (props) => {
   const getRiskCategory = (assessment, whiteText) => {
     const assessmentNum = Number(assessment);
     const risk = {
-      minimal: ["Minimal Risk", "green"],
-      moderate: ["Moderate Risk", "orange"],
-      significant: ["Significant Risk", "red"],
+      lowest: ["Lowest Risk", "green"],
+      lower: ["Lower Risk", "yellowGreen"],
+      moderate: ["Moderate Risk", altYellow],
+      higher: ["Higher Risk", "orange"],
+      highest: ["Highest Risk", "red"],
     };
 
     let assignedRisk;
 
-    if (assessmentNum < 20) {
-      assignedRisk = risk.minimal;
-    } else if (assessmentNum >= 20 && assessmentNum <= 200) {
+    if (assessmentNum < 5) {
+      assignedRisk = risk.lowest;
+    } else if (assessmentNum >= 5 && assessmentNum < 20) {
+      assignedRisk = risk.lower;
+    } else if (assessmentNum >= 20 && assessmentNum < 50) {
       assignedRisk = risk.moderate;
+    } else if (assessmentNum >= 50 && assessmentNum <= 200) {
+      assignedRisk = risk.higher;
     } else {
-      assignedRisk = risk.significant;
+      assignedRisk = risk.highest;
     }
 
     if (whiteText) {
@@ -72,22 +84,29 @@ const AssessmentAdvisory = (props) => {
               estimated new cases on average in the last 14 days per 100,000
               people. <br />
               This indicates {getRiskCategory(assessment)} for Covid-19 exposure
-              in schools within {county}, {stateUSA}.
+              in schools within {county}, {stateUSA} according to CDC
+              guidelines.
             </p>
           </span>
         </div>
         <div className="assessment-guide" style={{ flex: 1 }}>
-          <span className="green font-bold">Minimal Risk</span>: Less than 20
+          <span className="green font-bold">Lowest Risk</span>: Less than 5 new
+          cases on average in the last 14 days per 100,000 people in this county
+          <hr />
+          <span className="yellow-green font-bold">Lower Risk</span>: Less than
+          20 new cases on average in the last 14 days per 100,000 people in this
+          county
+          <hr />
+          <span className="yellow font-bold">Moderate Risk</span>: Less than 50
           new cases on average in the last 14 days per 100,000 people in this
           county
           <hr />
-          <span className="orange font-bold">Moderate Risk</span>: More than 20
-          new cases on average in the last 14 days per 100,000 people in this
-          county
+          <span className="orange font-bold">Higher Risk</span>: Less or equal
+          to 200 new cases on average in the last 14 days per 100,000 people in
+          this county
           <hr />
-          <span className="red font-bold">Significant Risk</span>: More than 200
-          new cases on average in the last 14 days per 100,000 people in this
-          county
+          <span className="red font-bold">Highest Risk</span>: More than 200 new
+          cases on average in the last 14 days per 100,000 people in this county
           <br />
         </div>
       </div>

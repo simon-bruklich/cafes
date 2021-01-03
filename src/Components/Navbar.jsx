@@ -15,7 +15,7 @@ const NavbarReactive = () => {
             target="_blank"
             href="https://github.com/simon-bruklich/COVID-19-Schools"
           >
-            Github
+            GitHub
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>

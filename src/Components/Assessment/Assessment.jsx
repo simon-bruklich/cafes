@@ -14,7 +14,6 @@ const CENSUS_API_KEY = "4ea13d96102d350d26d2f58793cb843a11f667b2";
 
 const Assessment = (props) => {
   const [population, setPopulation] = useState(null);
-  // TODO: why did it stop showing this second loading?
   const [assessment, setAssessment] = useState(null);
   const [lastTwoWeeks, setLastTwoWeeks] = useState(null);
 
