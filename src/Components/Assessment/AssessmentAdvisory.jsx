@@ -85,27 +85,27 @@ const AssessmentAdvisory = (props) => {
               people. <br />
               This indicates {getRiskCategory(assessment)} for Covid-19 exposure
               in schools within {county}, {stateUSA} according to CDC
-              guidelines.
+              guidelines:
             </p>
           </span>
         </div>
         <div className="assessment-guide" style={{ flex: 1 }}>
-          <span className="green font-bold">Lowest Risk</span>: Less than 5 new
+          <span className="red font-bold">Highest Risk</span>: More than 200 new
           cases on average in the last 14 days per 100,000 people in this county
-          <hr />
-          <span className="yellow-green font-bold">Lower Risk</span>: Less than
-          20 new cases on average in the last 14 days per 100,000 people in this
-          county
-          <hr />
-          <span className="yellow font-bold">Moderate Risk</span>: Less than 50
-          new cases on average in the last 14 days per 100,000 people in this
-          county
           <hr />
           <span className="orange font-bold">Higher Risk</span>: Less or equal
           to 200 new cases on average in the last 14 days per 100,000 people in
           this county
           <hr />
-          <span className="red font-bold">Highest Risk</span>: More than 200 new
+          <span className="yellow font-bold">Moderate Risk</span>: Less than 50
+          new cases on average in the last 14 days per 100,000 people in this
+          county
+          <hr />
+          <span className="yellow-green font-bold">Lower Risk</span>: Less than
+          20 new cases on average in the last 14 days per 100,000 people in this
+          county
+          <hr />
+          <span className="green font-bold">Lowest Risk</span>: Less than 5 new
           cases on average in the last 14 days per 100,000 people in this county
           <br />
         </div>

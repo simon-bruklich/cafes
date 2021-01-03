@@ -15,7 +15,7 @@ import "./Stylesheets/Fade.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Disclaimer from "./Components/Disclaimer/Disclaimer";
 import About from "./Components/About/About";
-import { Spinner } from "react-bootstrap";
+// import { Spinner } from "react-bootstrap";
 
 // TODO: lint all files
 // TODO: condense imports?
@@ -70,7 +70,7 @@ function App() {
                 onStateChange={setStateUSA}
               ></LocationForm>
               <Introduction />
-              <img className="logo" src={Cafes} alt="Logo" />
+              <img className="logo" draggable="false" src={Cafes} alt="Logo" />
             </div>
           </div>
         </div>
@@ -96,7 +96,12 @@ function App() {
                     aria-hidden="true"
                   /> */}
                 </div>
-                <img className="loading-logo" src={Cafes} alt="Logo" />
+                <img
+                  className="loading-logo"
+                  draggable="false"
+                  src={Cafes}
+                  alt="Logo"
+                />
               </div>
             </div>
           </div>

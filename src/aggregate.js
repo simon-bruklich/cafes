@@ -49,7 +49,7 @@ async function aggregate(county, state) {
 
   try {
     const promisedData = await downloadData();
-    return parseData(promisedData, county, state);
+    return await parseData(promisedData, county, state);
   } catch (e) {
     return new Error(e);
   }
