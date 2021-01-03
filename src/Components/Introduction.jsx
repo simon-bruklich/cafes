@@ -3,7 +3,7 @@ import React from "react";
 const Introduction = (props) => {
   return (
     <div className="introduction">
-      <p>Enter your county information above to get started</p>
+      <p className="bold">Enter your county information above to get started</p>
       <p>
         Cafés provides school administrators, teachers, students, parents and
         many others with a Covid-19 risk assessment for schools in the given
