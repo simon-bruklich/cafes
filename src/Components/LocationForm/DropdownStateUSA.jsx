@@ -8,11 +8,12 @@ function DropdownStateUSA({ stateUSA, onStateChange }) {
     <Dropdown
       className="margin-bottom-15 padding-horizontal-10"
       onSelect={(e) => onStateChange(e)}
+      drop="down"
     >
       <Dropdown.Toggle id="locations-dropdown" variant="primary">
         {displayStateUSA}
       </Dropdown.Toggle>
-      <Dropdown.Menu>
+      <Dropdown.Menu flip={false}>
         {Object.keys(states).map((abbreviation) => (
           <Dropdown.Item key={abbreviation} eventKey={states[abbreviation]}>
             {abbreviation}

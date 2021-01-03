@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import logo from "./logo.svg";
+import Cafes from "./Images/Cafes.png";
 import aggregate from "./aggregate";
 import LocationForm from "./Components/LocationForm/LocationForm";
 import Cases from "./Components/Cases";
 import Assessment from "./Components/Assessment/Assessment";
 import LocationModal from "./Components/Modal";
 import Navbar from "./Components/Navbar";
+import Welcome from "./Components/Welcome";
 import Introduction from "./Components/Introduction";
 import Footer from "./Components/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -61,13 +62,15 @@ function App() {
       return (
         <div>
           <div className={fadeLocation ? "App fade-out" : "App"}>
-            <div className="center">
-              <Introduction></Introduction>
+            <div className="center welcome-intro">
+              <Welcome />
               <LocationForm
                 onCountyChange={setCounty}
                 stateUSA={stateUSA}
                 onStateChange={setStateUSA}
               ></LocationForm>
+              <Introduction />
+              <img className="logo" src={Cafes} alt="Logo" />
             </div>
           </div>
         </div>
@@ -81,16 +84,19 @@ function App() {
               className={fadeLoading ? "loading fade-out" : "loading fade-in"}
             >
               <div className="loading-secondary">
-                <div className="loading-text">
-                  Please wait, this may take a moment
+                <div>
+                  <span className="loading-text">
+                    Please wait, this may take a moment
+                  </span>
+                  {/* <Spinner
+                    className="loading-spinner"
+                    as="span"
+                    animation="border"
+                    role="status"
+                    aria-hidden="true"
+                  /> */}
                 </div>
-                <Spinner
-                  className="loading-spinner"
-                  as="span"
-                  animation="border"
-                  role="status"
-                  aria-hidden="true"
-                />
+                <img className="loading-logo" src={Cafes} alt="Logo" />
               </div>
             </div>
           </div>

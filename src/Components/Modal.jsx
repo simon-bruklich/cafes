@@ -50,12 +50,7 @@ const CustomModal = (props) => {
         <Modal.Title>{title}</Modal.Title>
       </Modal.Header>
       <Modal.Body>{<p>{body}</p>}</Modal.Body>
-      <Modal.Footer
-        style={{
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
+      <Modal.Footer>
         <Button variant="primary" onClick={() => handleAccept()}>
           I Understand
         </Button>
