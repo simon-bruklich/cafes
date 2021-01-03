@@ -13,6 +13,7 @@ async function parseData(data, county, state) {
       ignorePunctuation: true,
       sensitivity: "base",
     });
+
     for (let i = 0; i < data.length; i++) {
       const cell = data[i];
       if (
@@ -47,10 +48,7 @@ async function aggregate(county, state) {
     );
   };
 
-  try {
-    const promisedData = await downloadData();
-    return await parseData(promisedData, county, state);
-  } catch (e) {
-    return new Error(e);
-  }
+  const promisedData = await downloadData();
+
+  return await parseData(promisedData, county, state);
 }

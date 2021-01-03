@@ -132,12 +132,27 @@ function App() {
           <Route exact path="/">
             <LocationModal
               show={[modalShow, setModalShow]}
-              // TODO: add to modalResolve
               onAccept={() =>
-                modalResolve(setModalShow, setCounty, setStateUSA, setData)
+                modalResolve(
+                  setCounty,
+                  setStateUSA,
+                  setData,
+                  setModalShow,
+                  setLoading,
+                  setFadeLocation,
+                  setFadeLoading
+                )
               }
               onCancel={() =>
-                modalResolve(setModalShow, setCounty, setStateUSA, setData)
+                modalResolve(
+                  setCounty,
+                  setStateUSA,
+                  setData,
+                  setModalShow,
+                  setLoading,
+                  setFadeLocation,
+                  setFadeLoading
+                )
               }
               title={"Oops! Location not found"}
               body={
@@ -161,11 +176,11 @@ function App() {
   );
 }
 
-function modalResolve(setModalShow, setCounty, setStateUSA, setData) {
-  setCounty(false);
-  setStateUSA(false);
-  setData(false);
-  setModalShow(false);
+function modalResolve(...setStates) {
+  console.log("begin set: ", setStates);
+  setStates.forEach((set) => {
+    set(false);
+  });
 }
 
 export default App;

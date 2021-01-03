@@ -52,7 +52,6 @@ const Assessment = (props) => {
     for (let i = lastIndex; i > data.length - 16; i--) {
       workingSet.unshift(data[i]);
     }
-    console.log("workingSet ", workingSet);
     setLastTwoWeeks(workingSet);
   }
 
