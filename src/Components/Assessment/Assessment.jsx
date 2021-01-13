@@ -7,15 +7,13 @@ import LineGraph from "../LineGraph";
 // It is used as a courtesy to the U.S. Census to assist their data analytics.
 const CENSUS_API_KEY = "4ea13d96102d350d26d2f58793cb843a11f667b2";
 
-// TODO: handle when invalid county/state is given
 // TODO: refactor component, elevate new cases
-
-// TODO: consider total cases in addition to 2 week avg
 
 const Assessment = (props) => {
   const [population, setPopulation] = useState(null);
   const [assessment, setAssessment] = useState(null);
   const [lastTwoWeeks, setLastTwoWeeks] = useState(null);
+  const data = props.aggregation;
 
   // Calculate population
   useEffect(() => {
@@ -32,7 +30,7 @@ const Assessment = (props) => {
       }
     }
     doWork();
-  }, [props.aggregation]);
+  }, [population, props.aggregation]);
 
   // Calculate average
   useEffect(() => {
@@ -41,9 +39,7 @@ const Assessment = (props) => {
       const average = computeAverage(lastTwoWeeks, fips, population);
       setAssessment(Math.round(average));
     }
-  }, [lastTwoWeeks]);
-
-  const data = props.aggregation;
+  }, [data, lastTwoWeeks, population]);
 
   // Gather last two weeks + 1 day
   if (population && !lastTwoWeeks) {
@@ -81,10 +77,7 @@ const Assessment = (props) => {
             county={props.county}
             stateUSA={props.stateUSA}
           ></AssessmentAdvisory>
-          <AssessmentMoreInfo
-            assessment={assessment}
-            lastTwoWeeks={lastTwoWeeks}
-          ></AssessmentMoreInfo>
+          <AssessmentMoreInfo lastTwoWeeks={lastTwoWeeks}></AssessmentMoreInfo>
         </div>
       )}
     </div>
@@ -107,7 +100,7 @@ const computeAverage = (dataSet, fips, population) => {
     const deathsAndRecoveries =
       estimateRecoveries(deltaDeathsToday) + deltaDeathsToday;
 
-    newCasesByDay.push(Math.max(deltaCasesToday, 0));
+    newCasesByDay.push(Math.max(deltaCasesToday - deathsAndRecoveries, 0));
   }
 
   const totalNewCases = newCasesByDay.reduce((a, b) => a + b, 0);
@@ -118,16 +111,17 @@ const computeAverage = (dataSet, fips, population) => {
 
 /**
  * Estimate the amount of people that have recovered from Covid-19.
- * This estimate is based on an assumed 98% recovery rate.
+ * This estimate is based on a 98% recovery rate.
  * This was isolated into its own function to bring awareness to and compartmentalize the
  * estimation that has to be made in calculation, due to a lack of statistics for "daily new cases" by County.
  * Simply taking the change in total cases does not work because "new cases"
  * may also be replacing deaths and recoveries in the "total cases" count.
+ * Additionally, divide by 14 days as medical experts report 1-2 week recovery time for Covid-19.
  * @param {Integer} deltaDeathsToday Difference in death's between this date and the day prior.
  * @returns {Number} Estimated number of recoveries.
  */
 function estimateRecoveries(deltaDeathsToday) {
-  return deltaDeathsToday / 0.03;
+  return deltaDeathsToday / 0.02 / 14;
 }
 
 // String input

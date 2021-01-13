@@ -29,7 +29,7 @@ const LineGraph = ({
           <XAxis dataKey={keyName} />
           <YAxis />
           <Tooltip />
-          <Legend verticalAlign="bottom" align="center" layout="horizontal" />
+          {/* <Legend verticalAlign="bottom" align="center" layout="horizontal" /> */}
           {lineNames.map((name) => (
             <Line type="linear" dataKey={name} key={name} />
           ))}

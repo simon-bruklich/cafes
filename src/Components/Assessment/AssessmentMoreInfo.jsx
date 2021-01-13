@@ -11,7 +11,6 @@ import LineGraph from "../LineGraph";
 const AssessmentMoreInfo = (props) => {
   // Used to scroll into view
   const viewRef = React.useRef(null);
-  const assessment = props.assessment;
   const lastTwoWeeks = props.lastTwoWeeks.slice();
   let lastTwoWeeksShift = props.lastTwoWeeks.slice();
   lastTwoWeeksShift.shift();
@@ -30,6 +29,10 @@ const AssessmentMoreInfo = (props) => {
         <ContextAwareToggle viewRef={viewRef} eventKey="0" />
         <Accordion.Collapse eventKey="0">
           <Card.Body className="bg-gray">
+            <p>
+              Note: Data subject to change, especially for more recent days as
+              figures continue to be reported
+            </p>
             <LineGraph
               title={"New Cases"}
               viewRef={viewRef}

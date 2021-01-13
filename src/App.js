@@ -15,6 +15,7 @@ import "./Stylesheets/Fade.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Disclaimer from "./Components/Disclaimer/Disclaimer";
 import About from "./Components/About/About";
+import Loading from "./Components/Loading";
 // import { Spinner } from "react-bootstrap";
 
 // TODO: lint all files
@@ -78,34 +79,7 @@ function App() {
     } else if (county && stateUSA) {
       // Loading spinner
       if (loading) {
-        return (
-          <div>
-            <div
-              className={fadeLoading ? "loading fade-out" : "loading fade-in"}
-            >
-              <div className="loading-secondary">
-                <div>
-                  <span className="loading-text">
-                    Please wait, this may take a moment
-                  </span>
-                  {/* <Spinner
-                    className="loading-spinner"
-                    as="span"
-                    animation="border"
-                    role="status"
-                    aria-hidden="true"
-                  /> */}
-                </div>
-                <img
-                  className="loading-logo"
-                  draggable="false"
-                  src={Cafes}
-                  alt="Logo"
-                />
-              </div>
-            </div>
-          </div>
-        );
+        return <Loading fadeLoading={fadeLoading}></Loading>;
       } else {
         // Cases Page
         return (
@@ -177,7 +151,6 @@ function App() {
 }
 
 function modalResolve(...setStates) {
-  console.log("begin set: ", setStates);
   setStates.forEach((set) => {
     set(false);
   });
