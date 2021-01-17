@@ -28,7 +28,9 @@ const MainPage = ({
     async function doWork() {
       aggregate(county, stateUSA)
         .catch((err) => {
-          setModalShow(true);
+          setModalShow(
+            'We were unable to find any data for this location.\nPlease make sure you have entered the correct location and try again\n(e.g. type "Suffolk" for Suffolk County).'
+          );
         })
         .then((response) => {
           setData(response);
@@ -86,6 +88,7 @@ const MainPage = ({
         <div className={loading ? "App" : "App fade-in"}>
           <Cases aggregation={data} location={[county, stateUSA]}></Cases>
           <Assessment
+            setModalShow={setModalShow}
             aggregation={data}
             county={county}
             stateUSA={stateUSA}

@@ -53,10 +53,8 @@ function App() {
                   setFadeLoading
                 )
               }
-              title={"Oops! Location not found"}
-              body={
-                'We were unable to find any data for this location.\nPlease make sure you have entered the correct location and try again\n(e.g. type "Suffolk" for Suffolk County).'
-              }
+              title={"Oops!"}
+              body={modalShow}
             ></LocationModal>
             <MainPage
               county={county}

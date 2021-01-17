@@ -31,7 +31,7 @@ const CustomModal = (props) => {
 
   return (
     <Modal
-      show={showModal}
+      show={!!showModal}
       backdrop="static"
       keyboard={false}
       centered

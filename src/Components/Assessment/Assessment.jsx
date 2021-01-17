@@ -12,6 +12,7 @@ const Assessment = (props) => {
   const [assessment, setAssessment] = useState(null);
   const [lastTwoWeeks, setLastTwoWeeks] = useState(null);
   const data = props.aggregation;
+  const setModalShow = props.setModalShow;
 
   // Calculate population
   useEffect(() => {
@@ -23,12 +24,12 @@ const Assessment = (props) => {
       ) {
         const data = props.aggregation;
         const fips = data[data.length - 1].fips;
-        const pop = await getPopulation(fips);
+        const pop = await getPopulation(fips, setModalShow);
         setPopulation(pop);
       }
     }
     doWork();
-  }, [population, props.aggregation]);
+  }, [population, props.aggregation, setModalShow]);
 
   // Calculate average
   useEffect(() => {
@@ -122,8 +123,7 @@ function estimateRecoveries(deltaDeathsToday) {
   return deltaDeathsToday / 0.02 / 14;
 }
 
-// String input
-async function getPopulation(fips) {
+async function getPopulation(fips, setModalShow) {
   let url = "https://api.census.gov/data/2019/pep/charagegroups?get=POP&";
   // First 2 digits are state ID
   const stateID = fips.substring(0, 2);
@@ -131,23 +131,33 @@ async function getPopulation(fips) {
   const countyID = fips.substring(2, 6);
   url += `for=county:${countyID}&in=state:${stateID}`;
   const urlWithKey = url + `&key=${CENSUS_API_KEY}`;
-  // TODO: (another .catch?)check response.status == 200, else error
 
   const fetchPopulation = () => {
     return new Promise((resolve, reject) =>
       fetch(urlWithKey)
         .then((response) => response.json())
         .then((json) => resolve(json[1][0]))
-        // Fallback: try accessing without API key (each user's IP is only allowed 500 requests per day)
-        .catch(
-          (err) =>
-            // TODO: double .then as above and JSON parse
-            resolve(console.log(err))
-          //fetch(url).then((response) => parsePopulation(response.text()))
-        )
+        // Fallback: try accessing without API key (without API key, each user's IP address is only allowed 500 requests per day)
+        .catch((err) => {
+          console.error(
+            "Error fetching population using Census API key: ",
+            err
+          );
+          fetch(url)
+            .then((response) => response.json())
+            .then((json) => resolve(json[1][0]))
+            .catch((e) => {
+              console.error("Unable to fetch population from Census.gov: ", e);
+              reject(e);
+            });
+        })
     );
   };
-  const population = fetchPopulation();
+  const population = fetchPopulation().catch(() =>
+    setModalShow(
+      "Unable to grab population data from Census.gov, please try again later."
+    )
+  );
 
   return population;
 }
