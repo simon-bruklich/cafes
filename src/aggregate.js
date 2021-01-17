@@ -38,7 +38,6 @@ async function parseData(data, county, state) {
 async function aggregate(county, state) {
   const downloadData = () => {
     return new Promise((resolve, reject) => {
-      reject();
       Papa.parse(URL, {
         download: true,
         worker: true,
