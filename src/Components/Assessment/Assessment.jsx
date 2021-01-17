@@ -7,8 +7,6 @@ import LineGraph from "../LineGraph";
 // It is used as a courtesy to the U.S. Census to assist their data analytics.
 const CENSUS_API_KEY = "4ea13d96102d350d26d2f58793cb843a11f667b2";
 
-// TODO: refactor component, elevate new cases
-
 const Assessment = (props) => {
   const [population, setPopulation] = useState(null);
   const [assessment, setAssessment] = useState(null);
@@ -85,7 +83,7 @@ const Assessment = (props) => {
 };
 
 // Dataset must be presented in chronological order
-const computeAverage = (dataSet, fips, population) => {
+const computeAverage = (dataSet, fips, population, setNewCases) => {
   const newCasesByDay = [];
 
   // Skip the first data point;

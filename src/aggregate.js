@@ -5,10 +5,13 @@ export default aggregate;
 const URL =
   "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv";
 
-// TODO: optimization: stream in data
 async function parseData(data, county, state) {
   let relevant = [];
   return new Promise((resolve, reject) => {
+    if (!data) {
+      reject("Unable to gather data, please try again later");
+    }
+
     const enCollator = new Intl.Collator("en", {
       ignorePunctuation: true,
       sensitivity: "base",
@@ -34,21 +37,25 @@ async function parseData(data, county, state) {
 
 async function aggregate(county, state) {
   const downloadData = () => {
-    return new Promise((resolve) =>
+    return new Promise((resolve, reject) => {
+      reject();
       Papa.parse(URL, {
         download: true,
-        // TODO:
-        // error: errorModal(err);
         worker: true,
+        error: (e) => {
+          reject(e);
+        },
         header: true,
         complete: (results) => {
           resolve(results.data);
         },
-      })
-    );
+      });
+    });
   };
 
-  const promisedData = await downloadData();
+  const promisedData = await downloadData().catch((e) =>
+    console.error("Unable to fetch or parse Covid-19 data: ", e)
+  );
 
   return await parseData(promisedData, county, state);
 }

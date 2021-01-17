@@ -5,7 +5,7 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  Legend,
+  // Legend,
   ResponsiveContainer,
 } from "recharts";
 import React from "react";

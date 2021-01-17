@@ -39,7 +39,6 @@ const CustomModal = (props) => {
       onExited={() => handleExited()}
     >
       <Modal.Header
-        // TODO:
         style={{
           display: "flex",
           justifyContent: "center",
