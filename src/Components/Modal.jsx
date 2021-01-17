@@ -1,14 +1,9 @@
 import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 
-const CustomModal = (props) => {
-  // TODO: cleanup
-  const showModal = props.show[0];
-  const title = props.title;
-  const body = props.body;
-  const acceptFn = props.onAccept;
-  const cancelFn = props.onCancel;
-  const setShowModal = props.show[1];
+const CustomModal = ({ show, title, body, onAccept, onCancel }) => {
+  const showModal = show[0];
+  const setShowModal = show[1];
   const [accepted, setAccepted] = useState(false);
 
   const handleAccept = () => {
@@ -22,10 +17,10 @@ const CustomModal = (props) => {
 
   const handleExited = () => {
     if (accepted) {
-      acceptFn();
+      onAccept();
       setAccepted(false);
     } else {
-      cancelFn();
+      onCancel();
     }
   };
 
