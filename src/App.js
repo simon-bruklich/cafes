@@ -26,7 +26,8 @@ function App() {
 
   return (
     <div className="main-div">
-      <Router>
+      {/* Compatability with GH-pages */}
+      <Router basename={process.env.PUBLIC_URL}>
         <Route path="/">
           <Navbar />
         </Route>
