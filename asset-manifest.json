@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/Cafes-Covid-School-Tracker/static/css/main.a9b2a51f.chunk.css",
-    "main.js": "/Cafes-Covid-School-Tracker/static/js/main.8c947b4a.chunk.js",
-    "main.js.map": "/Cafes-Covid-School-Tracker/static/js/main.8c947b4a.chunk.js.map",
+    "main.js": "/Cafes-Covid-School-Tracker/static/js/main.372eca6e.chunk.js",
+    "main.js.map": "/Cafes-Covid-School-Tracker/static/js/main.372eca6e.chunk.js.map",
     "runtime-main.js": "/Cafes-Covid-School-Tracker/static/js/runtime-main.cfc71279.js",
     "runtime-main.js.map": "/Cafes-Covid-School-Tracker/static/js/runtime-main.cfc71279.js.map",
     "static/css/2.95258f03.chunk.css": "/Cafes-Covid-School-Tracker/static/css/2.95258f03.chunk.css",
-    "static/js/2.71b84757.chunk.js": "/Cafes-Covid-School-Tracker/static/js/2.71b84757.chunk.js",
-    "static/js/2.71b84757.chunk.js.map": "/Cafes-Covid-School-Tracker/static/js/2.71b84757.chunk.js.map",
+    "static/js/2.6df79712.chunk.js": "/Cafes-Covid-School-Tracker/static/js/2.6df79712.chunk.js",
+    "static/js/2.6df79712.chunk.js.map": "/Cafes-Covid-School-Tracker/static/js/2.6df79712.chunk.js.map",
     "index.html": "/Cafes-Covid-School-Tracker/index.html",
-    "precache-manifest.f758b68884f207263493f3f05eb3f5ba.js": "/Cafes-Covid-School-Tracker/precache-manifest.f758b68884f207263493f3f05eb3f5ba.js",
+    "precache-manifest.e05980f55f482c97556fd3692258af61.js": "/Cafes-Covid-School-Tracker/precache-manifest.e05980f55f482c97556fd3692258af61.js",
     "service-worker.js": "/Cafes-Covid-School-Tracker/service-worker.js",
     "static/css/2.95258f03.chunk.css.map": "/Cafes-Covid-School-Tracker/static/css/2.95258f03.chunk.css.map",
     "static/css/main.a9b2a51f.chunk.css.map": "/Cafes-Covid-School-Tracker/static/css/main.a9b2a51f.chunk.css.map",
-    "static/js/2.71b84757.chunk.js.LICENSE.txt": "/Cafes-Covid-School-Tracker/static/js/2.71b84757.chunk.js.LICENSE.txt",
+    "static/js/2.6df79712.chunk.js.LICENSE.txt": "/Cafes-Covid-School-Tracker/static/js/2.6df79712.chunk.js.LICENSE.txt",
     "static/media/Cafes.png": "/Cafes-Covid-School-Tracker/static/media/Cafes.1018aaef.png"
   },
   "entrypoints": [
     "static/js/runtime-main.cfc71279.js",
     "static/css/2.95258f03.chunk.css",
-    "static/js/2.71b84757.chunk.js",
+    "static/js/2.6df79712.chunk.js",
     "static/css/main.a9b2a51f.chunk.css",
-    "static/js/main.8c947b4a.chunk.js"
+    "static/js/main.372eca6e.chunk.js"
   ]
 }
