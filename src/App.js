@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import LocationModal from './Components/Modal';
-import Navbar from './Components/Navbar';
-import Footer from './Components/Footer';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Stylesheets/App.css';
 import './Stylesheets/Fade.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import LocationModal from './Components/Modal';
+import Navbar from './Components/Navbar';
+import Footer from './Components/Footer';
 import Disclaimer from './Components/Disclaimer/Disclaimer';
 import About from './Components/About/About';
 import MainPage from './Components/MainPage';
@@ -40,9 +40,9 @@ function App() {
               onCancel={() =>
                 modalResolve(setCounty, setStateUSA, setData, setModalShow, setLoading, setFadeLocation, setFadeLoading)
               }
-              title={'Oops!'}
+              title="Oops!"
               body={modalShow}
-            ></LocationModal>
+            />
             <MainPage
               county={county}
               setCounty={setCounty}
@@ -57,7 +57,7 @@ function App() {
               loading={loading}
               setLoading={setLoading}
               setModalShow={setModalShow}
-            ></MainPage>
+            />
           </Route>
           <Route exact path="/disclaimer">
             <Disclaimer />

@@ -10,7 +10,7 @@ const Cases = ({ aggregation, location }) => {
 
   if (typeof aggregation === 'object' && aggregation.length !== 0) {
     const data = aggregation;
-    cases = data[data.length - 1]['cases'];
+    cases = data[data.length - 1].cases;
     cases = parseInt(cases).toLocaleString();
     const [county, state] = [location[0], location[1]];
     msg = `${cases} active cases in ${county}, ${state}`;

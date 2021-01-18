@@ -47,7 +47,9 @@ const CustomModal = ({ show, title, body, onAccept, onCancel }) => {
       >
         <Modal.Title>{title}</Modal.Title>
       </Modal.Header>
-      <Modal.Body>{<p>{body}</p>}</Modal.Body>
+      <Modal.Body>
+        <p>{body}</p>
+      </Modal.Body>
       <Modal.Footer>
         <Button variant="primary" onClick={() => handleAccept()}>
           I Understand

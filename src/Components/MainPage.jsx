@@ -31,6 +31,7 @@ const MainPage = ({
     async function doWork() {
       aggregate(county, stateUSA)
         .catch((err) => {
+          console.error('Error aggregating data: ', err);
           setModalShow(
             'We were unable to find any data for this location.\nPlease make sure you have entered the correct location and try again\n(e.g. type "Suffolk" for Suffolk County).'
           );
@@ -62,26 +63,26 @@ const MainPage = ({
         <div className={fadeLocation ? 'App fade-out' : 'App'}>
           <div className="center welcome-intro">
             <Welcome />
-            <LocationForm onCountyChange={setCounty} stateUSA={stateUSA} onStateChange={setStateUSA}></LocationForm>
+            <LocationForm onCountyChange={setCounty} stateUSA={stateUSA} onStateChange={setStateUSA} />
             <Introduction />
             <img className="logo" draggable="false" src={Cafes} alt="Logo" />
           </div>
         </div>
       </div>
     );
-  } else if (county && stateUSA) {
+  }
+  if (county && stateUSA) {
     // Loading spinner
     if (loading) {
-      return <Loading fadeLoading={fadeLoading}></Loading>;
-    } else {
-      // Cases Page
-      return (
-        <div className={loading ? 'App' : 'App fade-in'}>
-          <Cases aggregation={data} location={[county, stateUSA]}></Cases>
-          <Assessment setModalShow={setModalShow} aggregation={data} county={county} stateUSA={stateUSA}></Assessment>
-        </div>
-      );
+      return <Loading fadeLoading={fadeLoading} />;
     }
+    // Cases Page
+    return (
+      <div className={loading ? 'App' : 'App fade-in'}>
+        <Cases aggregation={data} location={[county, stateUSA]} />
+        <Assessment setModalShow={setModalShow} aggregation={data} county={county} stateUSA={stateUSA} />
+      </div>
+    );
   }
 };
 

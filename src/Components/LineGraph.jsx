@@ -37,9 +37,12 @@ const LineGraph = ({ data, keyName, lineNames, viewRef, title, paddingTop }) => 
 };
 
 LineGraph.propTypes = {
-  data: PropTypes.array,
-  nameOfKey: PropTypes.string,
+  data: PropTypes.arrayOf(PropTypes.object),
+  keyName: PropTypes.string,
   lineNames: PropTypes.arrayOf(PropTypes.string),
+  viewRef: PropTypes.object,
+  title: PropTypes.string,
+  paddingTop: PropTypes.string,
 };
 
 export default LineGraph;
