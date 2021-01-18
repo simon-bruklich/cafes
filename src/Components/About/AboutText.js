@@ -37,7 +37,7 @@ const AboutText = () => {
       It is important to remember that Cafés provides a best-effort estimate that is updated daily using currently
       available data. Although there are many factors that the CDC uses, Cafés only analyzes based on the first
       variable: new Covid-19 cases. For more information, please read our{' '}
-      <a target="_blank" rel="noopener noreferrer" href="/disclaimer">
+      <a target="_blank" rel="noopener noreferrer" href={`${process.env.PUBLIC_URL}/#/disclaimer`}>
         Disclaimer
       </a>
       .<h3 className={aboutSubHeader}>Mobile Compatability</h3>

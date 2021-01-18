@@ -22,7 +22,7 @@ const Introduction = () => {
         }{' '}
         For more information, check out our{' '}
         {
-          <a target="_blank" rel="noopener noreferrer" href="/about">
+          <a target="_blank" rel="noopener noreferrer" href={`${process.env.PUBLIC_URL}/#/about`}>
             About
           </a>
         }{' '}

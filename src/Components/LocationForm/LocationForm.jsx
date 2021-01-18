@@ -114,7 +114,7 @@ const disclaimerText = (
   <span className="disclaimer-modal">
     This site does not provide medical or health advice. Contact medical professionals for information regarding advice,
     prevention and treatment. For more information, view our complete{' '}
-    <a target="_blank" rel="noopener noreferrer" href="/disclaimer">
+    <a target="_blank" rel="noopener noreferrer" href={`${process.env.PUBLIC_URL}/#/disclaimer`}>
       disclaimer
     </a>
     .
