@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/Cafes/static/css/main.a9b2a51f.chunk.css",
-    "main.js": "/Cafes/static/js/main.73cd15c2.chunk.js",
-    "main.js.map": "/Cafes/static/js/main.73cd15c2.chunk.js.map",
+    "main.js": "/Cafes/static/js/main.f80958cc.chunk.js",
+    "main.js.map": "/Cafes/static/js/main.f80958cc.chunk.js.map",
     "runtime-main.js": "/Cafes/static/js/runtime-main.73b46874.js",
     "runtime-main.js.map": "/Cafes/static/js/runtime-main.73b46874.js.map",
     "static/css/2.95258f03.chunk.css": "/Cafes/static/css/2.95258f03.chunk.css",
-    "static/js/2.6df79712.chunk.js": "/Cafes/static/js/2.6df79712.chunk.js",
-    "static/js/2.6df79712.chunk.js.map": "/Cafes/static/js/2.6df79712.chunk.js.map",
+    "static/js/2.9efbcb8a.chunk.js": "/Cafes/static/js/2.9efbcb8a.chunk.js",
+    "static/js/2.9efbcb8a.chunk.js.map": "/Cafes/static/js/2.9efbcb8a.chunk.js.map",
     "index.html": "/Cafes/index.html",
-    "precache-manifest.df973a0dc984e884772d701e3026ad5e.js": "/Cafes/precache-manifest.df973a0dc984e884772d701e3026ad5e.js",
+    "precache-manifest.aeb391706cd9addd65efe52a10c3549b.js": "/Cafes/precache-manifest.aeb391706cd9addd65efe52a10c3549b.js",
     "service-worker.js": "/Cafes/service-worker.js",
     "static/css/2.95258f03.chunk.css.map": "/Cafes/static/css/2.95258f03.chunk.css.map",
     "static/css/main.a9b2a51f.chunk.css.map": "/Cafes/static/css/main.a9b2a51f.chunk.css.map",
-    "static/js/2.6df79712.chunk.js.LICENSE.txt": "/Cafes/static/js/2.6df79712.chunk.js.LICENSE.txt",
+    "static/js/2.9efbcb8a.chunk.js.LICENSE.txt": "/Cafes/static/js/2.9efbcb8a.chunk.js.LICENSE.txt",
     "static/media/Cafes.png": "/Cafes/static/media/Cafes.1018aaef.png"
   },
   "entrypoints": [
     "static/js/runtime-main.73b46874.js",
     "static/css/2.95258f03.chunk.css",
-    "static/js/2.6df79712.chunk.js",
+    "static/js/2.9efbcb8a.chunk.js",
     "static/css/main.a9b2a51f.chunk.css",
-    "static/js/main.73cd15c2.chunk.js"
+    "static/js/main.f80958cc.chunk.js"
   ]
 }

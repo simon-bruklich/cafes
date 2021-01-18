@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "aeb8c11210d7f325f275205feb117a46",
+    "revision": "dc4243514ca884f7f5288d2dd4eae2c7",
     "url": "/Cafes/index.html"
   },
   {
-    "revision": "66dddde3746d457a061a",
+    "revision": "02465eb010e07bd3e8af",
     "url": "/Cafes/static/css/2.95258f03.chunk.css"
   },
   {
-    "revision": "3b9c1b36dd599b26d7db",
+    "revision": "d25ea55785de7bafdb34",
     "url": "/Cafes/static/css/main.a9b2a51f.chunk.css"
   },
   {
-    "revision": "66dddde3746d457a061a",
-    "url": "/Cafes/static/js/2.6df79712.chunk.js"
+    "revision": "02465eb010e07bd3e8af",
+    "url": "/Cafes/static/js/2.9efbcb8a.chunk.js"
   },
   {
     "revision": "98cab8a5b693ca0381ebe7864fc605d2",
-    "url": "/Cafes/static/js/2.6df79712.chunk.js.LICENSE.txt"
+    "url": "/Cafes/static/js/2.9efbcb8a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3b9c1b36dd599b26d7db",
-    "url": "/Cafes/static/js/main.73cd15c2.chunk.js"
+    "revision": "d25ea55785de7bafdb34",
+    "url": "/Cafes/static/js/main.f80958cc.chunk.js"
   },
   {
     "revision": "5cff230bbe3e86c22ddb",
