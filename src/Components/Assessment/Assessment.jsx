@@ -11,8 +11,6 @@ const Assessment = (props) => {
   const [assessment, setAssessment] = useState(null);
   const [lastTwoWeeks, setLastTwoWeeks] = useState(null);
   const { data } = props;
-  const { setLoading } = props;
-  const { setFadeLoading } = props;
   const { population } = props;
 
   // Calculate average
@@ -22,11 +20,6 @@ const Assessment = (props) => {
       const average = computeAverage(lastTwoWeeks, fips, population);
       // Done with all downloading at this point
       setAssessment(Math.round(average));
-      setFadeLoading(true);
-      setTimeout(() => {
-        setFadeLoading(false);
-        setLoading(false);
-      }, 1 * 900);
     }
   }, [data, lastTwoWeeks, population]);
 

@@ -51,6 +51,7 @@ const MainPage = ({
             .catch((e) => setModalShow('Unable to grab population data from Census.gov, please try again later.'))
             .then((popResponse) => {
               setPopulation(popResponse);
+              // Done with all downloading of data
               setFadeLoading(true);
               setTimeout(() => {
                 setFadeLoading(false);
