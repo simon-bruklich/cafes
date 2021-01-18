@@ -1,5 +1,5 @@
-import React from "react";
-import AboutText from "./AboutText";
+import React from 'react';
+import AboutText from './AboutText';
 
 /**
  * About page, containing the given AboutText content.

@@ -1,6 +1,6 @@
-import React from "react";
-import GeneralDisclaimer from "./General";
-import MedicalHealthDisclaimer from "./Medical";
+import React from 'react';
+import GeneralDisclaimer from './General';
+import MedicalHealthDisclaimer from './Medical';
 
 /**
  * Disclaimer page containing a General Disclaimer as well as a Medical Disclaimer.

@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import LocationModal from "./Components/Modal";
-import Navbar from "./Components/Navbar";
-import Footer from "./Components/Footer";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./Stylesheets/App.css";
-import "./Stylesheets/Fade.css";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Disclaimer from "./Components/Disclaimer/Disclaimer";
-import About from "./Components/About/About";
-import MainPage from "./Components/MainPage";
+import React, { useState } from 'react';
+import LocationModal from './Components/Modal';
+import Navbar from './Components/Navbar';
+import Footer from './Components/Footer';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './Stylesheets/App.css';
+import './Stylesheets/Fade.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Disclaimer from './Components/Disclaimer/Disclaimer';
+import About from './Components/About/About';
+import MainPage from './Components/MainPage';
 
 // TODO: lint all files
 
@@ -35,28 +35,12 @@ function App() {
             <LocationModal
               show={[modalShow, setModalShow]}
               onAccept={() =>
-                modalResolve(
-                  setCounty,
-                  setStateUSA,
-                  setData,
-                  setModalShow,
-                  setLoading,
-                  setFadeLocation,
-                  setFadeLoading
-                )
+                modalResolve(setCounty, setStateUSA, setData, setModalShow, setLoading, setFadeLocation, setFadeLoading)
               }
               onCancel={() =>
-                modalResolve(
-                  setCounty,
-                  setStateUSA,
-                  setData,
-                  setModalShow,
-                  setLoading,
-                  setFadeLocation,
-                  setFadeLoading
-                )
+                modalResolve(setCounty, setStateUSA, setData, setModalShow, setLoading, setFadeLocation, setFadeLoading)
               }
-              title={"Oops!"}
+              title={'Oops!'}
               body={modalShow}
             ></LocationModal>
             <MainPage

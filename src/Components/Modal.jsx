@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Modal, Button } from "react-bootstrap";
+import React, { useState } from 'react';
+import { Modal, Button } from 'react-bootstrap';
 
 /**
  * Abstracted modal component used for all modals on site.
@@ -39,9 +39,9 @@ const CustomModal = ({ show, title, body, onAccept, onCancel }) => {
     >
       <Modal.Header
         style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
         closeButton
       >

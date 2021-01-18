@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import AssessmentAdvisory from "./AssessmentAdvisory";
-import AssessmentMoreInfo from "./AssessmentMoreInfo";
-import LineGraph from "../LineGraph";
+import React, { useEffect, useState } from 'react';
+import AssessmentAdvisory from './AssessmentAdvisory';
+import AssessmentMoreInfo from './AssessmentMoreInfo';
+import LineGraph from '../LineGraph';
 
 // NOTE: this key is NOT sensitive. Cafes will even work without this key.
 // It is used as a courtesy to the U.S. Census to assist their data analytics.
-const CENSUS_API_KEY = "4ea13d96102d350d26d2f58793cb843a11f667b2";
+const CENSUS_API_KEY = '4ea13d96102d350d26d2f58793cb843a11f667b2';
 
 /**
  * Provides the main assessment page for the user based on given location.
@@ -21,11 +21,7 @@ const Assessment = (props) => {
   // Calculate population
   useEffect(() => {
     async function doWork() {
-      if (
-        typeof props.aggregation === "object" &&
-        props.aggregation.length !== 0 &&
-        !population
-      ) {
+      if (typeof props.aggregation === 'object' && props.aggregation.length !== 0 && !population) {
         const data = props.aggregation;
         const fips = data[data.length - 1].fips;
         const pop = await getPopulation(fips, setModalShow);
@@ -60,7 +56,7 @@ const Assessment = (props) => {
   if (lastTwoWeeks) {
     graphData = lastTwoWeeks.map((day) => ({
       date: day.date,
-      "Active Cases": day.cases,
+      'Active Cases': day.cases,
     }));
     // Skip first bootstrap day
     graphData.shift();
@@ -70,11 +66,7 @@ const Assessment = (props) => {
     <div className="assessment">
       {lastTwoWeeks && (
         <div>
-          <LineGraph
-            data={graphData}
-            keyName={"date"}
-            lineNames={["Active Cases"]}
-          ></LineGraph>
+          <LineGraph data={graphData} keyName={'date'} lineNames={['Active Cases']}></LineGraph>
           <AssessmentAdvisory
             assessment={assessment}
             county={props.county}
@@ -108,8 +100,7 @@ const computeAverage = (dataSet, fips, population) => {
     const deltaCasesToday = dataSet[i].cases - casesBaseLine;
     const deltaDeathsToday = dataSet[i].deaths - deathsBaseLine;
 
-    const deathsAndRecoveries =
-      estimateRecoveries(deltaDeathsToday) + deltaDeathsToday;
+    const deathsAndRecoveries = estimateRecoveries(deltaDeathsToday) + deltaDeathsToday;
 
     newCasesByDay.push(Math.max(deltaCasesToday - deathsAndRecoveries, 0));
   }
@@ -136,7 +127,7 @@ function estimateRecoveries(deltaDeathsToday) {
 }
 
 async function getPopulation(fips, setModalShow) {
-  let url = "https://api.census.gov/data/2019/pep/charagegroups?get=POP&";
+  let url = 'https://api.census.gov/data/2019/pep/charagegroups?get=POP&';
   // First 2 digits are state ID
   const stateID = fips.substring(0, 2);
   // Last 4 digits are county ID
@@ -154,24 +145,19 @@ async function getPopulation(fips, setModalShow) {
         .then((json) => resolve(json[1][0]))
         // Fallback: try accessing without API key (without API key, each user's IP address is only allowed 500 requests per day)
         .catch((err) => {
-          console.error(
-            "Error fetching population using Census API key: ",
-            err
-          );
+          console.error('Error fetching population using Census API key: ', err);
           fetch(url)
             .then((response) => response.json())
             .then((json) => resolve(json[1][0]))
             .catch((e) => {
-              console.error("Unable to fetch population from Census.gov: ", e);
+              console.error('Unable to fetch population from Census.gov: ', e);
               reject(e);
             });
         })
     );
   };
   const population = fetchPopulation().catch(() =>
-    setModalShow(
-      "Unable to grab population data from Census.gov, please try again later."
-    )
+    setModalShow('Unable to grab population data from Census.gov, please try again later.')
   );
 
   return population;

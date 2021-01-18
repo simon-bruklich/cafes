@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const altYellow = "#f7c836";
+const altYellow = '#f7c836';
 
 /**
  * Provides user with a recommendation based on CDC guidelines:
@@ -21,28 +21,28 @@ const AssessmentAdvisory = (props) => {
   const getColor = (assessment) => {
     const assessmentNum = Number(assessment);
     if (assessmentNum < 5) {
-      return "green";
+      return 'green';
     } else if (assessmentNum >= 5 && assessmentNum < 20) {
-      return "yellowGreen";
+      return 'yellowGreen';
     } else if (assessmentNum >= 20 && assessmentNum < 50) {
       return altYellow;
     } else if (assessmentNum >= 50 && assessmentNum <= 200) {
-      return "orange";
+      return 'orange';
     } else if (assessmentNum > 200) {
-      return "red";
+      return 'red';
     } else {
-      return "black";
+      return 'black';
     }
   };
 
   const getRiskCategory = (assessment, whiteText) => {
     const assessmentNum = Number(assessment);
     const risk = {
-      lowest: ["Lowest Risk", "green"],
-      lower: ["Lower Risk", "yellowGreen"],
-      moderate: ["Moderate Risk", altYellow],
-      higher: ["Higher Risk", "orange"],
-      highest: ["Highest Risk", "red"],
+      lowest: ['Lowest Risk', 'green'],
+      lower: ['Lower Risk', 'yellowGreen'],
+      moderate: ['Moderate Risk', altYellow],
+      higher: ['Higher Risk', 'orange'],
+      highest: ['Highest Risk', 'red'],
     };
 
     let assignedRisk;
@@ -60,7 +60,7 @@ const AssessmentAdvisory = (props) => {
     }
 
     if (whiteText) {
-      assignedRisk[1] = "white";
+      assignedRisk[1] = 'white';
     }
 
     return <span style={{ color: assignedRisk[1] }}>{assignedRisk[0]}</span>;
@@ -68,10 +68,7 @@ const AssessmentAdvisory = (props) => {
 
   return (
     <div className="advisory-overview">
-      <div
-        className="primary-advisory"
-        style={{ backgroundColor: getColor(assessment) }}
-      >
+      <div className="primary-advisory" style={{ backgroundColor: getColor(assessment) }}>
         {getRiskCategory(assessment, true)}
       </div>
       <div className="detailed-assessment">
@@ -81,32 +78,27 @@ const AssessmentAdvisory = (props) => {
           </span>
           <span>
             <p className="bold">
-              estimated new cases on average in the last 14 days per 100,000
-              people. <br />
-              This indicates {getRiskCategory(assessment)} for Covid-19 exposure
-              in schools within {county}, {stateUSA} according to CDC
-              guidelines:
+              estimated new cases on average in the last 14 days per 100,000 people. <br />
+              This indicates {getRiskCategory(assessment)} for Covid-19 exposure in schools within {county}, {stateUSA}{' '}
+              according to CDC guidelines:
             </p>
           </span>
         </div>
         <div className="assessment-guide" style={{ flex: 1 }}>
-          <span className="red font-bold">Highest Risk</span>: More than 200 new
-          cases on average in the last 14 days per 100,000 people in this county
+          <span className="red font-bold">Highest Risk</span>: More than 200 new cases on average in the last 14 days
+          per 100,000 people in this county
           <hr />
-          <span className="orange font-bold">Higher Risk</span>: Less or equal
-          to 200 new cases on average in the last 14 days per 100,000 people in
-          this county
+          <span className="orange font-bold">Higher Risk</span>: Less or equal to 200 new cases on average in the last
+          14 days per 100,000 people in this county
           <hr />
-          <span className="yellow font-bold">Moderate Risk</span>: Less than 50
-          new cases on average in the last 14 days per 100,000 people in this
-          county
+          <span className="yellow font-bold">Moderate Risk</span>: Less than 50 new cases on average in the last 14 days
+          per 100,000 people in this county
           <hr />
-          <span className="yellow-green font-bold">Lower Risk</span>: Less than
-          20 new cases on average in the last 14 days per 100,000 people in this
-          county
+          <span className="yellow-green font-bold">Lower Risk</span>: Less than 20 new cases on average in the last 14
+          days per 100,000 people in this county
           <hr />
-          <span className="green font-bold">Lowest Risk</span>: Less than 5 new
-          cases on average in the last 14 days per 100,000 people in this county
+          <span className="green font-bold">Lowest Risk</span>: Less than 5 new cases on average in the last 14 days per
+          100,000 people in this county
           <br />
         </div>
       </div>

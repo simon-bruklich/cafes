@@ -1,7 +1,7 @@
-import React, { useState, useCallback } from "react";
-import DropdownStateUSA from "./DropdownStateUSA";
-import { Button } from "react-bootstrap";
-import DisclaimerModal from "../Modal";
+import React, { useState, useCallback } from 'react';
+import DropdownStateUSA from './DropdownStateUSA';
+import { Button } from 'react-bootstrap';
+import DisclaimerModal from '../Modal';
 
 /**
  * Update County location input as user types in String on form.
@@ -13,7 +13,7 @@ const useInput = (initialValue) => {
   return {
     value,
     setValue,
-    reset: () => setValue(""),
+    reset: () => setValue(''),
     bind: {
       value,
       onChange: (event) => {
@@ -29,7 +29,7 @@ const useInput = (initialValue) => {
  * @param {*} props Value of currently selected U.S. State and functions to perform when changing county/state.
  */
 function LocationForm({ onCountyChange, stateUSA, onStateChange }) {
-  const { value: county, bind: bindCounty } = useInput("");
+  const { value: county, bind: bindCounty } = useInput('');
   const [modalShow, setModalShow] = useState(false);
 
   const handleAcceptModal = useCallback(
@@ -63,7 +63,7 @@ function LocationForm({ onCountyChange, stateUSA, onStateChange }) {
         show={[modalShow, setModalShow]}
         onAccept={handleAcceptModal}
         onCancel={handleCancelModal}
-        title={"Disclaimer"}
+        title={'Disclaimer'}
         body={disclaimerText}
       ></DisclaimerModal>
       <form className="location" onSubmit={handleFormSubmit}>
@@ -72,21 +72,14 @@ function LocationForm({ onCountyChange, stateUSA, onStateChange }) {
           className="margin-bottom-15 padding-horizontal-10 input-county"
           autoFocus={true}
           type="text"
-          placeholder={county || "County name..."}
+          placeholder={county || 'County name...'}
           {...bindCounty}
         />
-        <DropdownStateUSA
-          stateUSA={stateUSA}
-          onStateChange={onStateChange}
-        ></DropdownStateUSA>
+        <DropdownStateUSA stateUSA={stateUSA} onStateChange={onStateChange}></DropdownStateUSA>
         <Button
           variant="primary"
           type="submit"
-          className={
-            stateUSA && county
-              ? "pulse-btn padding-horizontal-10"
-              : "padding-horizontal-10"
-          }
+          className={stateUSA && county ? 'pulse-btn padding-horizontal-10' : 'padding-horizontal-10'}
           disabled={!(stateUSA && county)}
         >
           Submit
@@ -101,12 +94,12 @@ function LocationForm({ onCountyChange, stateUSA, onStateChange }) {
  * @param {String} county County string to standardize case and spelling of
  */
 const standardizeCounty = (county) => {
-  const words = county.trim().split(" ");
+  const words = county.trim().split(' ');
   const lastWord = words[words.length - 1];
 
   // Remove word county from end
-  if (lastWord.toLowerCase() === "county") {
-    const lastIndex = county.lastIndexOf(" ");
+  if (lastWord.toLowerCase() === 'county') {
+    const lastIndex = county.lastIndexOf(' ');
     county = county.substring(0, lastIndex);
   }
 
@@ -119,9 +112,8 @@ const standardizeCounty = (county) => {
 // Short disclaimer linking to complete disclaimer
 const disclaimerText = (
   <span className="disclaimer-modal">
-    This site does not provide medical or health advice. Contact medical
-    professionals for information regarding advice, prevention and treatment.
-    For more information, view our complete{" "}
+    This site does not provide medical or health advice. Contact medical professionals for information regarding advice,
+    prevention and treatment. For more information, view our complete{' '}
     <a target="_blank" rel="noopener noreferrer" href="/disclaimer">
       disclaimer
     </a>

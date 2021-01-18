@@ -7,22 +7,15 @@ import {
   Tooltip,
   // Legend,
   ResponsiveContainer,
-} from "recharts";
-import React from "react";
-import PropTypes from "prop-types";
+} from 'recharts';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 /**
  * Abstracted linegraph component used for all linegraphs.
  * @param {*} props Data to present, name of key legend, name of charted line, viewRef context, title of graph, and optional top padding
  */
-const LineGraph = ({
-  data,
-  keyName,
-  lineNames,
-  viewRef,
-  title,
-  paddingTop,
-}) => {
+const LineGraph = ({ data, keyName, lineNames, viewRef, title, paddingTop }) => {
   // Wrapped in ResponsiveContainer to avoid LineChart overlap with Legend
   return (
     <div ref={viewRef} className={`center chart ${paddingTop}`}>
