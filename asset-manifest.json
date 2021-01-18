@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/Cafes-Covid-School-Tracker/static/css/main.a9b2a51f.chunk.css",
-    "main.js": "/Cafes-Covid-School-Tracker/static/js/main.5b2fe998.chunk.js",
-    "main.js.map": "/Cafes-Covid-School-Tracker/static/js/main.5b2fe998.chunk.js.map",
-    "runtime-main.js": "/Cafes-Covid-School-Tracker/static/js/runtime-main.cfc71279.js",
-    "runtime-main.js.map": "/Cafes-Covid-School-Tracker/static/js/runtime-main.cfc71279.js.map",
-    "static/css/2.95258f03.chunk.css": "/Cafes-Covid-School-Tracker/static/css/2.95258f03.chunk.css",
-    "static/js/2.6df79712.chunk.js": "/Cafes-Covid-School-Tracker/static/js/2.6df79712.chunk.js",
-    "static/js/2.6df79712.chunk.js.map": "/Cafes-Covid-School-Tracker/static/js/2.6df79712.chunk.js.map",
-    "index.html": "/Cafes-Covid-School-Tracker/index.html",
-    "precache-manifest.ee6fea68fc1d0db4f8bf8b8c137597a0.js": "/Cafes-Covid-School-Tracker/precache-manifest.ee6fea68fc1d0db4f8bf8b8c137597a0.js",
-    "service-worker.js": "/Cafes-Covid-School-Tracker/service-worker.js",
-    "static/css/2.95258f03.chunk.css.map": "/Cafes-Covid-School-Tracker/static/css/2.95258f03.chunk.css.map",
-    "static/css/main.a9b2a51f.chunk.css.map": "/Cafes-Covid-School-Tracker/static/css/main.a9b2a51f.chunk.css.map",
-    "static/js/2.6df79712.chunk.js.LICENSE.txt": "/Cafes-Covid-School-Tracker/static/js/2.6df79712.chunk.js.LICENSE.txt",
-    "static/media/Cafes.png": "/Cafes-Covid-School-Tracker/static/media/Cafes.1018aaef.png"
+    "main.css": "/Cafes/static/css/main.a9b2a51f.chunk.css",
+    "main.js": "/Cafes/static/js/main.73cd15c2.chunk.js",
+    "main.js.map": "/Cafes/static/js/main.73cd15c2.chunk.js.map",
+    "runtime-main.js": "/Cafes/static/js/runtime-main.73b46874.js",
+    "runtime-main.js.map": "/Cafes/static/js/runtime-main.73b46874.js.map",
+    "static/css/2.95258f03.chunk.css": "/Cafes/static/css/2.95258f03.chunk.css",
+    "static/js/2.6df79712.chunk.js": "/Cafes/static/js/2.6df79712.chunk.js",
+    "static/js/2.6df79712.chunk.js.map": "/Cafes/static/js/2.6df79712.chunk.js.map",
+    "index.html": "/Cafes/index.html",
+    "precache-manifest.df973a0dc984e884772d701e3026ad5e.js": "/Cafes/precache-manifest.df973a0dc984e884772d701e3026ad5e.js",
+    "service-worker.js": "/Cafes/service-worker.js",
+    "static/css/2.95258f03.chunk.css.map": "/Cafes/static/css/2.95258f03.chunk.css.map",
+    "static/css/main.a9b2a51f.chunk.css.map": "/Cafes/static/css/main.a9b2a51f.chunk.css.map",
+    "static/js/2.6df79712.chunk.js.LICENSE.txt": "/Cafes/static/js/2.6df79712.chunk.js.LICENSE.txt",
+    "static/media/Cafes.png": "/Cafes/static/media/Cafes.1018aaef.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.cfc71279.js",
+    "static/js/runtime-main.73b46874.js",
     "static/css/2.95258f03.chunk.css",
     "static/js/2.6df79712.chunk.js",
     "static/css/main.a9b2a51f.chunk.css",
-    "static/js/main.5b2fe998.chunk.js"
+    "static/js/main.73cd15c2.chunk.js"
   ]
 }
