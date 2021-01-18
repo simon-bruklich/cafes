@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/Cafes/static/css/main.a9b2a51f.chunk.css",
-    "main.js": "/Cafes/static/js/main.f80958cc.chunk.js",
-    "main.js.map": "/Cafes/static/js/main.f80958cc.chunk.js.map",
-    "runtime-main.js": "/Cafes/static/js/runtime-main.73b46874.js",
-    "runtime-main.js.map": "/Cafes/static/js/runtime-main.73b46874.js.map",
-    "static/css/2.95258f03.chunk.css": "/Cafes/static/css/2.95258f03.chunk.css",
-    "static/js/2.9efbcb8a.chunk.js": "/Cafes/static/js/2.9efbcb8a.chunk.js",
-    "static/js/2.9efbcb8a.chunk.js.map": "/Cafes/static/js/2.9efbcb8a.chunk.js.map",
-    "index.html": "/Cafes/index.html",
-    "precache-manifest.aeb391706cd9addd65efe52a10c3549b.js": "/Cafes/precache-manifest.aeb391706cd9addd65efe52a10c3549b.js",
-    "service-worker.js": "/Cafes/service-worker.js",
-    "static/css/2.95258f03.chunk.css.map": "/Cafes/static/css/2.95258f03.chunk.css.map",
-    "static/css/main.a9b2a51f.chunk.css.map": "/Cafes/static/css/main.a9b2a51f.chunk.css.map",
-    "static/js/2.9efbcb8a.chunk.js.LICENSE.txt": "/Cafes/static/js/2.9efbcb8a.chunk.js.LICENSE.txt",
-    "static/media/Cafes.png": "/Cafes/static/media/Cafes.1018aaef.png"
+    "main.css": "/cafes/static/css/main.a9b2a51f.chunk.css",
+    "main.js": "/cafes/static/js/main.f50137b6.chunk.js",
+    "main.js.map": "/cafes/static/js/main.f50137b6.chunk.js.map",
+    "runtime-main.js": "/cafes/static/js/runtime-main.a6243196.js",
+    "runtime-main.js.map": "/cafes/static/js/runtime-main.a6243196.js.map",
+    "static/css/2.95258f03.chunk.css": "/cafes/static/css/2.95258f03.chunk.css",
+    "static/js/2.9efbcb8a.chunk.js": "/cafes/static/js/2.9efbcb8a.chunk.js",
+    "static/js/2.9efbcb8a.chunk.js.map": "/cafes/static/js/2.9efbcb8a.chunk.js.map",
+    "index.html": "/cafes/index.html",
+    "precache-manifest.d1b2a63b924c451aef6bf6a56f856be4.js": "/cafes/precache-manifest.d1b2a63b924c451aef6bf6a56f856be4.js",
+    "service-worker.js": "/cafes/service-worker.js",
+    "static/css/2.95258f03.chunk.css.map": "/cafes/static/css/2.95258f03.chunk.css.map",
+    "static/css/main.a9b2a51f.chunk.css.map": "/cafes/static/css/main.a9b2a51f.chunk.css.map",
+    "static/js/2.9efbcb8a.chunk.js.LICENSE.txt": "/cafes/static/js/2.9efbcb8a.chunk.js.LICENSE.txt",
+    "static/media/Cafes.png": "/cafes/static/media/Cafes.1018aaef.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.73b46874.js",
+    "static/js/runtime-main.a6243196.js",
     "static/css/2.95258f03.chunk.css",
     "static/js/2.9efbcb8a.chunk.js",
     "static/css/main.a9b2a51f.chunk.css",
-    "static/js/main.f80958cc.chunk.js"
+    "static/js/main.f50137b6.chunk.js"
   ]
 }
