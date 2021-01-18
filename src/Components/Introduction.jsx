@@ -10,7 +10,7 @@ const Introduction = () => {
       <p>
         Cafés provides school administrators, teachers, students, parents and many others with a Covid-19 risk
         assessment for schools in the given county. The Covid-19 risk assessment is generated from data that is updated
-        daily and provides an estimated risk of Covid-19 transmission in schools based off of{' '}
+        daily and provides an estimated risk of Covid-19 transmission in schools based on{' '}
         {
           <a
             target="_blank"

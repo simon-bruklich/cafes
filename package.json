@@ -1,5 +1,5 @@
 {
-  "homepage": "http://simon-bruklich.github.io/cafes",
+  "homepage": "https://simon-bruklich.github.io/cafes/",
   "name": "Cafes",
   "version": "1.0.0",
   "private": true,
@@ -16,7 +16,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "clean": "rm -rf node_modules/gh-pages/.cache",
+    "clean": "npm cache verify && rm -rf /workspaces/COVID-19-Schools-master/node_modules/gh-pages/.cache",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
