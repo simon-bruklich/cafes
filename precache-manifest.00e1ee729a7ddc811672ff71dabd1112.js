@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f44b153d77389c5267c56d90d00f93b8",
+    "revision": "26508e4928d27ac1bcb4e1b96d37a019",
     "url": "/Cafes-Covid-School-Tracker/index.html"
   },
   {
-    "revision": "66dddde3746d457a061a",
+    "revision": "c7db9887f6e88b4f0196",
     "url": "/Cafes-Covid-School-Tracker/static/css/2.95258f03.chunk.css"
   },
   {
-    "revision": "4e65d03106311ac49781",
+    "revision": "115080f59985c600e2bd",
     "url": "/Cafes-Covid-School-Tracker/static/css/main.a9b2a51f.chunk.css"
   },
   {
-    "revision": "66dddde3746d457a061a",
-    "url": "/Cafes-Covid-School-Tracker/static/js/2.6df79712.chunk.js"
+    "revision": "c7db9887f6e88b4f0196",
+    "url": "/Cafes-Covid-School-Tracker/static/js/2.71b84757.chunk.js"
   },
   {
     "revision": "98cab8a5b693ca0381ebe7864fc605d2",
-    "url": "/Cafes-Covid-School-Tracker/static/js/2.6df79712.chunk.js.LICENSE.txt"
+    "url": "/Cafes-Covid-School-Tracker/static/js/2.71b84757.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4e65d03106311ac49781",
-    "url": "/Cafes-Covid-School-Tracker/static/js/main.372eca6e.chunk.js"
+    "revision": "115080f59985c600e2bd",
+    "url": "/Cafes-Covid-School-Tracker/static/js/main.978fbdde.chunk.js"
   },
   {
     "revision": "3147f5e3a2b0d9d1b18a",
