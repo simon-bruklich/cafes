@@ -3,6 +3,10 @@ import DropdownStateUSA from "./DropdownStateUSA";
 import { Button } from "react-bootstrap";
 import DisclaimerModal from "../Modal";
 
+/**
+ * Update County location input as user types in String on form.
+ * @param {*} initialValue Current value of County location.
+ */
 const useInput = (initialValue) => {
   const [value, setValue] = useState(initialValue);
 
@@ -19,9 +23,11 @@ const useInput = (initialValue) => {
   };
 };
 
-export default LocationForm;
-
-// Security Note: JSX is already sanitized, no need to re-sanitize input
+/**
+ * Provides the location form in which the user can provide desired location data.
+ * // Security Note: JSX is already sanitized, no need to re-sanitize input
+ * @param {*} props Value of currently selected U.S. State and functions to perform when changing county/state.
+ */
 function LocationForm({ onCountyChange, stateUSA, onStateChange }) {
   const { value: county, bind: bindCounty } = useInput("");
   const [modalShow, setModalShow] = useState(false);
@@ -35,10 +41,17 @@ function LocationForm({ onCountyChange, stateUSA, onStateChange }) {
     [onCountyChange, county]
   );
 
+  /**
+   * Cancel modal if user does not agree to disclaimer.
+   */
   const handleCancelModal = () => {
     setModalShow(false);
   };
 
+  /**
+   * Display disclaimer pop-up when user submits location form.
+   * @param {*} event Submit form page event (refresh page and clear input)
+   */
   const handleFormSubmit = (event) => {
     event.preventDefault();
     setModalShow(true);
@@ -115,3 +128,5 @@ const disclaimerText = (
     .
   </span>
 );
+
+export default LocationForm;

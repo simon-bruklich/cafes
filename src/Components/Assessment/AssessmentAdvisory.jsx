@@ -11,7 +11,7 @@ const altYellow = "#f7c836";
  * Higher Risk: 50 to <=200
  * High Risk: >200
  * https://www.cdc.gov/coronavirus/2019-ncov/community/schools-childcare/indicators.html#thresholds
- * @param {*} props
+ * @param {*} props Completed assessment of location as well as location data.
  */
 const AssessmentAdvisory = (props) => {
   const assessment = props.assessment;

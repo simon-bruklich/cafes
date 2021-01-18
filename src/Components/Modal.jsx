@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 
+/**
+ * Abstracted modal component used for all modals on site.
+ * @param {*} props If modal is showing, the title of modal, the body of modal, function if accepted, function if cancelled.
+ */
 const CustomModal = ({ show, title, body, onAccept, onCancel }) => {
   const showModal = show[0];
   const setShowModal = show[1];

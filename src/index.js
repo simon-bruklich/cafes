@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 
-// Reject IE
+// Reject Internet Explorer clients
 if (window.MSCompatibleInfo != null) {
   const msg = "Internet Explorer is not supported; please use a modern browser";
   alert(msg);

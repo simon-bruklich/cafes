@@ -1,6 +1,10 @@
 import React from "react";
 
-const Welcome = (props) => {
+/**
+ * Large, bolded user welcome shown at the top of the main page.
+ *
+ */
+const Welcome = () => {
   return (
     <div className="welcome">
       <span className="welcome-text">Welcome to Cafés</span>

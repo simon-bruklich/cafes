@@ -11,6 +11,10 @@ import {
 import React from "react";
 import PropTypes from "prop-types";
 
+/**
+ * Abstracted linegraph component used for all linegraphs.
+ * @param {*} props Data to present, name of key legend, name of charted line, viewRef context, title of graph, and optional top padding
+ */
 const LineGraph = ({
   data,
   keyName,

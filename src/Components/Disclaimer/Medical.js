@@ -1,4 +1,5 @@
-// Medical disclaimer
+// Medical disclaimer text
+
 export default `
 The Site cannot and does not contain medical/health advice. The medical/health information is provided for general informational and educational purposes only and is not a substitute for professional advice.
 

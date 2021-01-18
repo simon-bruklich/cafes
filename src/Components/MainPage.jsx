@@ -7,8 +7,11 @@ import Cases from "./Cases";
 import Loading from "./Loading";
 import Cafes from "../Images/Cafes.png";
 import aggregate from "../aggregate";
-// import { Spinner } from "react-bootstrap";
 
+/**
+ * Main "home" page containing introduction, location form, loading transition, and final assessment.
+ * @param {*} props Passed from App.js, necessary to provide pop-up modals with context.
+ */
 const MainPage = ({
   county,
   setCounty,

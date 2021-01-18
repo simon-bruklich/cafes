@@ -1,8 +1,13 @@
 import React from "react";
-// About page
 
-const AboutText = (props) => {
-  const { aboutText, aboutSubHeader } = props;
+/**
+ * Text content of the "About" page.
+ */
+const AboutText = () => {
+  // CSS for about page, can be modified (added/removed) here
+  const aboutText = "about-text";
+  const aboutSubHeader = "about-sub-header";
+
   return (
     <div className={aboutText}>
       This website, Cafés (Covid-19 Advisory for Educational Systems), was

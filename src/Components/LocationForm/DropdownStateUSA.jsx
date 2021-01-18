@@ -1,6 +1,10 @@
 import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 
+/**
+ * Dropdown menu to select U.S. State.
+ * @param {*} Props Selected State and function to perform on U.S. State input change.
+ */
 function DropdownStateUSA({ stateUSA, onStateChange }) {
   const displayStateUSA = stateUSA || "Select State";
 

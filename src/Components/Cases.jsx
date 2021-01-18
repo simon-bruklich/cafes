@@ -1,14 +1,18 @@
 import React from "react";
 
-const Cases = (props) => {
+/**
+ * Component to show "Cases" summary at the top of the assessment page.
+ * @param {*} props aggregation of data and name of the given location.
+ */
+const Cases = ({ aggregation, location }) => {
   let cases;
   let msg = "";
 
-  if (typeof props.aggregation === "object" && props.aggregation.length !== 0) {
-    const data = props.aggregation;
+  if (typeof aggregation === "object" && aggregation.length !== 0) {
+    const data = aggregation;
     cases = data[data.length - 1]["cases"];
     cases = parseInt(cases).toLocaleString();
-    const [county, state] = [props.location[0], props.location[1]];
+    const [county, state] = [location[0], location[1]];
     msg = `${cases} active cases in ${county}, ${state}`;
   }
 

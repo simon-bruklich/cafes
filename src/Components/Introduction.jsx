@@ -1,6 +1,9 @@
 import React from "react";
 
-const Introduction = (props) => {
+/**
+ * The user introduction that appears below the location form on the main page.
+ */
+const Introduction = () => {
   return (
     <div className="introduction">
       <p className="bold">Enter your county information above to get started</p>

@@ -1,6 +1,12 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 
+/**
+ * Navigation bar located at the top of all pages.
+ * Responsive: will adjust based on device screen size,
+ *             and transition to "hamburger" menu on
+ *             mobile devices.
+ */
 const NavbarReactive = () => {
   return (
     <Navbar sticky="top" collapseOnSelect expand="lg" bg="dark" variant="dark">

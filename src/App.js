@@ -12,6 +12,9 @@ import MainPage from "./Components/MainPage";
 
 // TODO: lint all files
 
+/**
+ * Root of application.
+ */
 function App() {
   const [county, setCounty] = useState(null);
   const [stateUSA, setStateUSA] = useState(null);

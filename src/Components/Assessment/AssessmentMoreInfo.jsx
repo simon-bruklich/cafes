@@ -8,6 +8,11 @@ import {
 } from "react-bootstrap";
 import LineGraph from "../LineGraph";
 
+/**
+ * Provides the secondary assessments at the bottom of the assessments page that can be viewed by
+ * toggling the accordion component.
+ * @param {*} props The Covid-19 statistics of the given location for the last two weeks.
+ */
 const AssessmentMoreInfo = (props) => {
   // Used to scroll into view
   const viewRef = React.useRef(null);

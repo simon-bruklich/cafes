@@ -7,6 +7,10 @@ import LineGraph from "../LineGraph";
 // It is used as a courtesy to the U.S. Census to assist their data analytics.
 const CENSUS_API_KEY = "4ea13d96102d350d26d2f58793cb843a11f667b2";
 
+/**
+ * Provides the main assessment page for the user based on given location.
+ * @param {*} props county location, state location, aggregated data set, and modal visibility status.
+ */
 const Assessment = (props) => {
   const [population, setPopulation] = useState(null);
   const [assessment, setAssessment] = useState(null);
@@ -83,8 +87,16 @@ const Assessment = (props) => {
   );
 };
 
-// Dataset must be presented in chronological order
-const computeAverage = (dataSet, fips, population, setNewCases) => {
+/**
+ * Calculate the 14-day new average cases statistics from which a CDC recommendation
+ * may be derived.
+ *
+ * Note: Dataset must be presented in chronological order
+ * @param {*} dataSet Given data set to compute average from.
+ * @param {*} fips Fips location code of county/state.
+ * @param {*} population Given population statistics to compute average from.
+ */
+const computeAverage = (dataSet, fips, population) => {
   const newCasesByDay = [];
 
   // Skip the first data point;
@@ -132,6 +144,9 @@ async function getPopulation(fips, setModalShow) {
   url += `for=county:${countyID}&in=state:${stateID}`;
   const urlWithKey = url + `&key=${CENSUS_API_KEY}`;
 
+  /**
+   * Download and parse population statistics for U.S. Census API.
+   */
   const fetchPopulation = () => {
     return new Promise((resolve, reject) =>
       fetch(urlWithKey)

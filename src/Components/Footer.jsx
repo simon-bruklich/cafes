@@ -1,6 +1,9 @@
 import React from "react";
 import { Container, Row } from "react-bootstrap";
 
+/**
+ * Footer that is present on all pages.
+ */
 function Footer() {
   return (
     <div className="main-footer">

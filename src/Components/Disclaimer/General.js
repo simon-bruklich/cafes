@@ -1,4 +1,4 @@
-// General information disclaimer
+// General information disclaimer text
 
 export default `
 The information provided by Simon Bruklich (“we,” “us”, "I", "my", or “our”) on Cafés (the “Site”) and our mobile application is for general informational purposes only. All information on the Site and our mobile application is provided in good faith, however we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability or completeness of any information on the Site or our mobile application.
