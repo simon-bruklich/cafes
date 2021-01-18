@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a50364f57b27e1f6ad1048d374b72458",
+    "revision": "0c339b3e80201d86c1c87b91815380dd",
     "url": "/Cafes-Covid-School-Tracker/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Cafes-Covid-School-Tracker/static/css/2.95258f03.chunk.css"
   },
   {
-    "revision": "4b91ad2d13c5f3bf6516",
+    "revision": "a885af9654b5fb4b93dc",
     "url": "/Cafes-Covid-School-Tracker/static/css/main.a9b2a51f.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Cafes-Covid-School-Tracker/static/js/2.71b84757.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4b91ad2d13c5f3bf6516",
-    "url": "/Cafes-Covid-School-Tracker/static/js/main.2d4c7768.chunk.js"
+    "revision": "a885af9654b5fb4b93dc",
+    "url": "/Cafes-Covid-School-Tracker/static/js/main.f897de16.chunk.js"
   },
   {
     "revision": "3147f5e3a2b0d9d1b18a",
