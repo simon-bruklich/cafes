@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Stylesheets/App.css';
 import './Stylesheets/Fade.css';
@@ -9,8 +9,6 @@ import Footer from './Components/Footer';
 import Disclaimer from './Components/Disclaimer/Disclaimer';
 import About from './Components/About/About';
 import MainPage from './Components/MainPage';
-
-// TODO: lint all files
 
 /**
  * Root of application.
@@ -27,7 +25,7 @@ function App() {
   return (
     <div className="main-div">
       {/* Compatability with GH-pages */}
-      <Router basename={process.env.PUBLIC_URL}>
+      <HashRouter>
         <Route path="/">
           <Navbar />
         </Route>
@@ -60,17 +58,13 @@ function App() {
               setModalShow={setModalShow}
             />
           </Route>
-          <Route exact path="/disclaimer">
-            <Disclaimer />
-          </Route>
-          <Route exact path="/about">
-            <About />
-          </Route>
+          <Route path="/disclaimer" component={Disclaimer} />
+          <Route path="/about" component={About} />
         </Switch>
         <Route path="/">
           <Footer />
         </Route>
-      </Router>
+      </HashRouter>
     </div>
   );
 }
