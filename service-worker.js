@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Cafes-Covid-School-Tracker/precache-manifest.00e1ee729a7ddc811672ff71dabd1112.js"
+  "/Cafes-Covid-School-Tracker/precache-manifest.3843f82193b2469e814d9da19fc609c6.js"
 );
 
 self.addEventListener('message', (event) => {
