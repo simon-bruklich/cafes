@@ -16,7 +16,7 @@ const NavbarReactive = () => {
         <Nav className="mr-auto">
           <Nav.Link href={`${process.env.PUBLIC_URL}/#/disclaimer`}>Disclaimer</Nav.Link>
           <Nav.Link href={`${process.env.PUBLIC_URL}/#/about`}>About</Nav.Link>
-          <Nav.Link rel="noopener noreferrer" target="_blank" href="https://github.com/simon-bruklich/Cafes">
+          <Nav.Link rel="noopener noreferrer" target="_blank" href="https://github.com/simon-bruklich/cafes">
             GitHub
           </Nav.Link>
         </Nav>
