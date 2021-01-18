@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Welcome from './Welcome';
 import Introduction from './Introduction';
 import LocationForm from './LocationForm/LocationForm';
@@ -7,6 +7,7 @@ import Cases from './Cases';
 import Loading from './Loading';
 import Cafes from '../Images/Cafes.png';
 import aggregate from '../aggregate';
+import fetchPopulation from '../Population';
 
 /**
  * Main "home" page containing introduction, location form, loading transition, and final assessment.
@@ -27,8 +28,11 @@ const MainPage = ({
   setLoading,
   setModalShow,
 }) => {
+  const [population, setPopulation] = useState(false);
+
   useEffect(() => {
     async function doWork() {
+      // Aggregate Covid-19 data from John Hopkins
       aggregate(county, stateUSA)
         .catch((err) => {
           console.error('Error aggregating data: ', err);
@@ -37,12 +41,22 @@ const MainPage = ({
           );
         })
         .then((response) => {
+          // Set received Covid-19 data
           setData(response);
-          setFadeLoading(true);
-          setTimeout(() => {
-            setFadeLoading(false);
-            setLoading(false);
-          }, 1 * 1000);
+
+          // Get fips location code
+          const { fips } = response[response.length - 1];
+          // Get population
+          fetchPopulation(fips, setModalShow)
+            .catch((e) => setModalShow('Unable to grab population data from Census.gov, please try again later.'))
+            .then((popResponse) => {
+              setPopulation(popResponse);
+              setFadeLoading(true);
+              setTimeout(() => {
+                setFadeLoading(false);
+                setLoading(false);
+              }, 1 * 900);
+            });
         });
     }
 
@@ -71,6 +85,7 @@ const MainPage = ({
       </div>
     );
   }
+
   if (county && stateUSA) {
     // Loading spinner
     if (loading) {
@@ -80,7 +95,14 @@ const MainPage = ({
     return (
       <div className={loading ? 'App' : 'App fade-in'}>
         <Cases aggregation={data} location={[county, stateUSA]} />
-        <Assessment setModalShow={setModalShow} aggregation={data} county={county} stateUSA={stateUSA} />
+        <Assessment
+          population={population}
+          setLoading={setLoading}
+          setFadeLoading={setFadeLoading}
+          data={data}
+          county={county}
+          stateUSA={stateUSA}
+        />
       </div>
     );
   }

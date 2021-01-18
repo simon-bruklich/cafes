@@ -1,7 +1,5 @@
 import Papa from 'papaparse';
 
-export default aggregate;
-
 // URL for Covid-19 data source on Github: John Hopkins University aggregation.
 const URL = 'https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv';
 
@@ -58,3 +56,5 @@ async function aggregate(county, state) {
 
   return parseData(promisedData, county, state);
 }
+
+export default aggregate;
